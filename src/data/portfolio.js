@@ -1,0 +1,136 @@
+export const portfolioData = {
+  personal: {
+    name: "Yassine Souissi",
+    brand: "LOORD.Y",
+    tagline: "Product Designer & Digital Creative Director",
+    subtitle: "Crafting digital experiences that leave a mark.",
+    bio: "I'm a 19-year-old digital creative from Tunisia, studying Media Sciences at the 'Al-Fadil Bin Ashour' Institute. I blend design thinking with technical execution to build products people actually love using.",
+    bioExtended: "From pixel-perfect UI/UX designs to production-ready websites, I bring ideas to life with precision and style. When I'm not designing or coding, you'll find me swimming or deep in a gaming session.",
+    email: "yassinesouissi619@gmail.com",
+    location: "Tunisia",
+    available: true,
+    photo1: "/images/me1.jpeg",
+    photo2: "/images/me2.jpeg",
+  },
+
+  stats: [
+    { value: "10+", label: "Years Experience" },
+    { value: "150+", label: "Projects Completed" },
+    { value: "200+", label: "Happy Clients" },
+    { value: "3+", label: "Services Offered" },
+  ],
+
+  social: [
+    { name: "GitHub",    url: "https://github.com/LOORDyassin",             icon: "FaGithub" },
+    { name: "LinkedIn",  url: "https://linkedin.com/in/loord-yassine-souissi", icon: "FaLinkedin" },
+    { name: "Instagram", url: "https://instagram.com/loord.noya",            icon: "FaInstagram" },
+    { name: "Facebook",  url: "#",                                            icon: "FaFacebook" },
+  ],
+
+  technicalSkills: [
+    { name: "Figma",      level: 90, color: "#F24E1E", category: "Design" },
+    { name: "HTML5",      level: 88, color: "#E34F26", category: "Dev" },
+    { name: "CSS3",       level: 72, color: "#1572B6", category: "Dev" },
+    { name: "JavaScript", level: 53, color: "#F7DF1E", category: "Dev" },
+    { name: "Photoshop",  level: 80, color: "#31A8FF", category: "Design" },
+    { name: "UI/UX",      level: 85, color: "#a78bfa", category: "Design" },
+  ],
+
+  softSkills: [
+    { name: "Teamwork",           level: 90 },
+    { name: "Creativity",         level: 80 },
+    { name: "Project Management", level: 70 },
+    { name: "Communication",      level: 55 },
+  ],
+
+  services: [
+    {
+      icon: "FaPaintBrush",
+      title: "Graphic Design",
+      description: "Eye-catching visuals, ads, and brand identities that communicate your message with impact.",
+      tags: ["Branding", "Ads", "Posters", "Social Media"],
+      gradient: "from-purple-600 to-pink-600",
+    },
+    {
+      icon: "FaCode",
+      title: "Web Development",
+      description: "Modern, responsive websites built with clean code and optimized for Google's Core Web Vitals.",
+      tags: ["HTML/CSS", "JavaScript", "React", "SEO"],
+      gradient: "from-cyan-500 to-blue-600",
+    },
+    {
+      icon: "FaGamepad",
+      title: "Gaming Services",
+      description: "Professional 8 Ball Pool services — coaching, accounts, and competitive play.",
+      tags: ["8 Ball Pool", "Coaching", "Competitive"],
+      gradient: "from-emerald-500 to-teal-600",
+    },
+  ],
+
+  projects: [
+    {
+      id: 1,
+      title: "Product Interaction Web App",
+      description: "A full-featured interactive web application for product management with dynamic UI and smooth user experience.",
+      tags: ["HTML", "CSS", "JavaScript", "UI/UX"],
+      image: null,
+      link: "https://github.com/LOORDyassin",
+      live: "#",
+      featured: true,
+      gradient: "from-violet-600 to-indigo-600",
+    },
+    {
+      id: 2,
+      title: "Portfolio Website",
+      description: "Personal portfolio website showcasing my work, skills, and creative direction — designed and developed from scratch.",
+      tags: ["HTML", "CSS", "JavaScript", "Figma"],
+      image: null,
+      link: "https://github.com/LOORDyassin",
+      live: "https://loordyassin.github.io/portfolio/",
+      featured: true,
+      gradient: "from-cyan-500 to-blue-600",
+    },
+    {
+      id: 3,
+      title: "Brand Identity Design",
+      description: "Complete visual identity package including logos, color palettes, typography guidelines, and marketing materials.",
+      tags: ["Figma", "Photoshop", "Branding"],
+      image: null,
+      link: "https://github.com/LOORDyassin",
+      live: "#",
+      featured: false,
+      gradient: "from-pink-500 to-rose-600",
+    },
+    {
+      id: 4,
+      title: "Social Media Ad Campaign",
+      description: "Series of high-conversion advertisement designs for social platforms, focused on engagement and brand awareness.",
+      tags: ["Photoshop", "Graphic Design", "Marketing"],
+      image: null,
+      link: "https://github.com/LOORDyassin",
+      live: "#",
+      featured: false,
+      gradient: "from-amber-500 to-orange-600",
+    },
+    {
+      id: 5,
+      title: "8 Ball Pool Gaming Platform",
+      description: "Dedicated gaming service platform with coaching resources, account management, and community features.",
+      tags: ["Gaming", "Community", "Service"],
+      image: null,
+      link: "https://github.com/LOORDyassin",
+      live: "#",
+      featured: false,
+      gradient: "from-emerald-500 to-green-600",
+    },
+  ],
+
+  education: [
+    {
+      school: "Al-Fadil Bin Ashour Institute",
+      degree: "Media Sciences",
+      year: "2023 – Present",
+      description: "Studying media sciences with a focus on digital communication, design thinking, and creative direction.",
+    },
+  ],
+};
