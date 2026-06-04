@@ -25,6 +25,26 @@ function SkillBar({ name, level, color, delay }) {
   );
 }
 
+function BrowserFrame({ children }) {
+  return (
+    <div className="browser-frame">
+      <div className="browser-bar">
+        <div className="browser-dots">
+          <span className="browser-dot browser-dot-red" />
+          <span className="browser-dot browser-dot-yellow" />
+          <span className="browser-dot browser-dot-green" />
+        </div>
+        <div className="browser-url-bar">yassine.dev/skills</div>
+        <div className="browser-actions">
+          <span className="browser-icon" />
+          <span className="browser-icon" />
+        </div>
+      </div>
+      <div className="browser-content">{children}</div>
+    </div>
+  );
+}
+
 export default function Skills() {
   const { technicalSkills, softSkills } = portfolioData;
   const ref = useRef(null);
@@ -53,55 +73,63 @@ export default function Skills() {
           </p>
         </motion.div>
 
-        <div className="grid lg:grid-cols-2 gap-12">
-          {/* Technical */}
-          <motion.div
-            initial={{ opacity: 0, x: -40 }}
-            animate={inView ? { opacity: 1, x: 0 } : {}}
-            transition={{ duration: 0.7, delay: 0.2 }}
-            className="glass-card rounded-3xl p-12"
-          >
-            <h3 className="heading-font text-xl font-bold text-white mb-8 flex items-center gap-3">
-              <span className="w-8 h-8 rounded-lg bg-violet-500/20 flex items-center justify-center text-violet-400 text-xs font-mono">01</span>
-              Technical Skills
-            </h3>
-            {technicalSkills.map((skill, i) => (
-              <SkillBar key={skill.name} {...skill} delay={i * 0.1} />
-            ))}
-          </motion.div>
-
-          {/* Soft */}
-          <motion.div
-            initial={{ opacity: 0, x: 40 }}
-            animate={inView ? { opacity: 1, x: 0 } : {}}
-            transition={{ duration: 0.7, delay: 0.3 }}
-            className="glass-card rounded-3xl p-12"
-          >
-            <h3 className="heading-font text-xl font-bold text-white mb-8 flex items-center gap-3">
-              <span className="w-8 h-8 rounded-lg bg-cyan-500/20 flex items-center justify-center text-cyan-400 text-xs font-mono">02</span>
-              Professional Skills
-            </h3>
-            {softSkills.map((skill, i) => (
-              <SkillBar key={skill.name} {...skill} color="#7c3aed" delay={i * 0.1 + 0.2} />
-            ))}
-
-            {/* Expertise badges */}
-            <div className="mt-10">
-              <p className="text-slate-500 text-xs uppercase tracking-widest mb-4">Tools & Platforms</p>
-              <div className="flex flex-wrap gap-2">
-                {['Figma', 'Adobe Photoshop', 'VS Code', 'Git & GitHub', 'Chrome DevTools', 'Canva'].map((tool) => (
-                  <span
-                    key={tool}
-                    className="text-xs px-3 py-1.5 rounded-full text-violet-300 font-medium"
-                    style={{ background: 'rgba(124, 58, 237, 0.1)', border: '1px solid rgba(124, 58, 237, 0.2)' }}
-                  >
-                    {tool}
-                  </span>
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={inView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.7, delay: 0.15 }}
+        >
+          <BrowserFrame>
+            <div className="grid lg:grid-cols-2 gap-12">
+              {/* Technical */}
+              <motion.div
+                initial={{ opacity: 0, x: -40 }}
+                animate={inView ? { opacity: 1, x: 0 } : {}}
+                transition={{ duration: 0.7, delay: 0.2 }}
+                className="glass-card rounded-3xl p-8 sm:p-12"
+              >
+                <h3 className="heading-font text-xl font-bold text-white mb-8 flex items-center gap-3">
+                  <span className="w-8 h-8 rounded-lg bg-violet-500/20 flex items-center justify-center text-violet-400 text-xs font-mono">01</span>
+                  Technical Skills
+                </h3>
+                {technicalSkills.map((skill, i) => (
+                  <SkillBar key={skill.name} {...skill} delay={i * 0.1} />
                 ))}
-              </div>
+              </motion.div>
+
+              {/* Soft */}
+              <motion.div
+                initial={{ opacity: 0, x: 40 }}
+                animate={inView ? { opacity: 1, x: 0 } : {}}
+                transition={{ duration: 0.7, delay: 0.3 }}
+                className="glass-card rounded-3xl p-8 sm:p-12"
+              >
+                <h3 className="heading-font text-xl font-bold text-white mb-8 flex items-center gap-3">
+                  <span className="w-8 h-8 rounded-lg bg-cyan-500/20 flex items-center justify-center text-cyan-400 text-xs font-mono">02</span>
+                  Professional Skills
+                </h3>
+                {softSkills.map((skill, i) => (
+                  <SkillBar key={skill.name} {...skill} color="#7c3aed" delay={i * 0.1 + 0.2} />
+                ))}
+
+                {/* Expertise badges */}
+                <div className="mt-10">
+                  <p className="text-slate-500 text-xs uppercase tracking-widest mb-4">Tools & Platforms</p>
+                  <div className="flex flex-wrap gap-2">
+                    {['Figma', 'Adobe Photoshop', 'VS Code', 'Git & GitHub', 'Chrome DevTools', 'Canva'].map((tool) => (
+                      <span
+                        key={tool}
+                        className="text-xs px-3 py-1.5 rounded-full text-violet-300 font-medium"
+                        style={{ background: 'rgba(124, 58, 237, 0.1)', border: '1px solid rgba(124, 58, 237, 0.2)' }}
+                      >
+                        {tool}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              </motion.div>
             </div>
-          </motion.div>
-        </div>
+          </BrowserFrame>
+        </motion.div>
       </div>
     </section>
   );

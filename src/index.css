@@ -2,8 +2,8 @@
 @import "tailwindcss";
 
 *, *::before, *::after {
-  margin: 0;
-  padding: 0;
+  border: 0;
+  vertical-align: baseline;
   box-sizing: border-box;
 }
 
@@ -206,4 +206,120 @@ body {
   letter-spacing: 1.5px;
   text-transform: uppercase;
   margin-bottom: 16px;
+}
+
+/* ── Browser mockup frame ── */
+.browser-frame {
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid rgba(124, 58, 237, 0.35);
+  background: rgba(12, 12, 22, 0.9);
+  -webkit-backdrop-filter: blur(20px);
+  backdrop-filter: blur(20px);
+  box-shadow: 0 24px 64px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(255, 255, 255, 0.04);
+}
+
+.browser-bar {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 16px;
+  background: rgba(18, 18, 32, 0.95);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.browser-dots {
+  display: flex;
+  gap: 6px;
+  flex-shrink: 0;
+}
+
+.browser-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.browser-dot-red    { background: #ff5f57; }
+.browser-dot-yellow { background: #febc2e; }
+.browser-dot-green  { background: #28c840; }
+
+.browser-url-bar {
+  flex: 1;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 8px;
+  padding: 5px 14px;
+  font-size: 12px;
+  color: #64748b;
+  font-family: 'Inter', monospace;
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.browser-actions {
+  display: flex;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+.browser-icon {
+  width: 16px;
+  height: 16px;
+  border-radius: 4px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.browser-content {
+  padding: 28px;
+}
+
+/* M — 375px */
+@media (max-width: 375px) {
+  .browser-bar {
+    padding: 10px 12px;
+    gap: 8px;
+  }
+  .browser-dot {
+    width: 10px;
+    height: 10px;
+  }
+  .browser-dots { gap: 5px; }
+  .browser-url-bar {
+    font-size: 10px;
+    padding: 4px 10px;
+    border-radius: 6px;
+  }
+  .browser-icon {
+    width: 13px;
+    height: 13px;
+  }
+  .browser-content {
+    padding: 16px;
+  }
+}
+
+/* S — 325px */
+@media (max-width: 325px) {
+  .browser-bar {
+    padding: 8px 10px;
+    gap: 6px;
+  }
+  .browser-dot {
+    width: 8px;
+    height: 8px;
+  }
+  .browser-dots { gap: 4px; }
+  .browser-url-bar {
+    font-size: 9px;
+    padding: 3px 8px;
+  }
+  .browser-actions { display: none; }
+  .browser-content {
+    padding: 12px;
+  }
 }
