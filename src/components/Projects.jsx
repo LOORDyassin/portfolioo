@@ -17,21 +17,21 @@ export default function Projects() {
   );
 
   return (
-    <section id="projects" className="relative py-32 overflow-hidden">
+    <section id="projects" className="relative py-16 sm:py-24 lg:py-32 overflow-hidden">
       <div className="orb w-96 h-96 bg-violet-600/8 left-1/3 top-0" />
 
-      <div className="max-w-7xl mx-auto px-8 lg:px-12">
+      <div className="max-w-7xl mx-auto px-4 sm:px-8 lg:px-12">
         <motion.div
           ref={ref}
           initial={{ opacity: 0, y: 40 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.7 }}
-          className="text-center mb-12"
+          className="text-center mb-6 sm:mb-10 lg:mb-12"
         >
           <div className="section-tag inline-flex">
             <span className="text-violet-400">04</span> Projects
           </div>
-          <h2 className="heading-font text-4xl lg:text-5xl font-bold text-white mt-2">
+          <h2 className="heading-font text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold text-white mt-2">
             Work I'm <span className="gradient-text">Proud Of</span>
           </h2>
           <p className="text-slate-400 mt-4 max-w-xl mx-auto">
@@ -44,13 +44,13 @@ export default function Projects() {
           initial={{ opacity: 0 }}
           animate={inView ? { opacity: 1 } : {}}
           transition={{ delay: 0.3 }}
-          className="flex justify-center gap-3 mb-12 flex-wrap"
+          className="flex justify-center gap-2 mb-6 sm:mb-10 lg:mb-12 flex-wrap"
         >
           {categories.map((cat) => (
             <button
               key={cat}
               onClick={() => setFilter(cat)}
-              className={`px-5 py-2 rounded-full text-sm font-medium transition-all ${
+              className={`px-3 sm:px-5 py-1.5 sm:py-2 rounded-full text-xs sm:text-sm font-medium transition-all ${
                 filter === cat
                   ? 'bg-violet-600 text-white shadow-lg shadow-violet-500/30'
                   : 'glass text-slate-400 hover:text-white'
@@ -69,7 +69,7 @@ export default function Projects() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
             transition={{ duration: 0.4 }}
-            className="grid md:grid-cols-2 lg:grid-cols-3 gap-6"
+            className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5 lg:gap-6"
           >
             {filtered.map((project, i) => (
               <motion.div
@@ -81,23 +81,35 @@ export default function Projects() {
                 className="glass-card rounded-3xl overflow-hidden group"
               >
                 {/* Project image / placeholder */}
-                <div className={`h-44 bg-gradient-to-br ${project.gradient} relative overflow-hidden`}>
+                <div className={`h-40 sm:h-44 lg:h-48 bg-gradient-to-br ${project.gradient} relative overflow-hidden`}>
+                  {/* Fallback letter — always rendered underneath */}
                   <div className="absolute inset-0 flex items-center justify-center">
                     <span className="heading-font text-white/20 font-bold text-6xl select-none">
                       {project.title.charAt(0)}
                     </span>
                   </div>
-                  <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors" />
+
+                  {/* Real image on top — removes itself on error */}
+                  {project.image && (
+                    <img
+                      src={project.image}
+                      alt={project.title}
+                      className="absolute inset-0 w-full h-full object-cover z-10"
+                      onError={e => e.target.remove()}
+                    />
+                  )}
+
+                  <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors z-20" />
 
                   {/* Featured badge */}
                   {project.featured && (
-                    <div className="absolute top-3 left-3 bg-yellow-500/90 text-black text-xs font-bold px-2.5 py-1 rounded-full">
+                    <div className="absolute top-3 left-3 z-30 bg-yellow-500/90 text-black text-xs font-bold px-2.5 py-1 rounded-full">
                       Featured
                     </div>
                   )}
 
-                  {/* Links overlay */}
-                  <div className="absolute top-3 right-3 flex gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
+                  {/* Links overlay — always visible on touch, hover-only on pointer devices */}
+                  <div className="absolute top-3 right-3 z-30 flex gap-2 project-links transition-opacity">
                     <a
                       href={project.link}
                       target="_blank"
@@ -119,9 +131,9 @@ export default function Projects() {
                   </div>
                 </div>
 
-                <div className="p-8">
-                  <h3 className="heading-font font-bold text-white text-lg mb-2">{project.title}</h3>
-                  <p className="text-slate-400 text-sm leading-relaxed mb-4">{project.description}</p>
+                <div className="p-4 sm:p-6">
+                  <h3 className="heading-font font-bold text-white text-base sm:text-lg mb-2">{project.title}</h3>
+                  <p className="text-slate-400 text-xs sm:text-sm leading-relaxed mb-3 sm:mb-4">{project.description}</p>
 
                   <div className="flex flex-wrap gap-1.5 pb-1">
                     {project.tags.map((tag) => (
@@ -144,7 +156,7 @@ export default function Projects() {
           initial={{ opacity: 0 }}
           animate={inView ? { opacity: 1 } : {}}
           transition={{ delay: 0.5 }}
-          className="text-center mt-12"
+          className="text-center mt-8 sm:mt-12"
         >
           <a
             href="https://github.com/LOORDyassin"

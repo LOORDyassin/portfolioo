@@ -21,22 +21,22 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className="relative py-32 overflow-hidden">
+    <section id="contact" className="relative py-16 sm:py-24 lg:py-32 overflow-hidden">
       <div className="orb w-80 h-80 bg-violet-600/12 left-0 bottom-0" />
       <div className="orb w-64 h-64 bg-cyan-500/10 right-0 top-20" />
 
-      <div className="max-w-7xl mx-auto px-8 lg:px-12">
+      <div className="max-w-7xl mx-auto px-4 sm:px-8 lg:px-12">
         <motion.div
           ref={ref}
           initial={{ opacity: 0, y: 40 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.7 }}
-          className="text-center mb-16"
+          className="text-center mb-8 sm:mb-12 lg:mb-16"
         >
           <div className="section-tag inline-flex">
             <span className="text-violet-400">05</span> Contact
           </div>
-          <h2 className="heading-font text-4xl lg:text-5xl font-bold text-white mt-2">
+          <h2 className="heading-font text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold text-white mt-2">
             Let's <span className="gradient-text">Work Together</span>
           </h2>
           <p className="text-slate-400 mt-4 max-w-xl mx-auto">
@@ -44,7 +44,7 @@ export default function Contact() {
           </p>
         </motion.div>
 
-        <div className="grid lg:grid-cols-2 gap-12">
+        <div className="grid lg:grid-cols-2 gap-8 lg:gap-12">
           {/* Left — info */}
           <motion.div
             initial={{ opacity: 0, x: -40 }}
@@ -52,7 +52,7 @@ export default function Contact() {
             transition={{ duration: 0.7, delay: 0.2 }}
             className="flex flex-col gap-6"
           >
-            <div className="glass-card rounded-3xl p-12">
+            <div className="glass-card rounded-3xl p-6 sm:p-8 lg:p-12">
               <h3 className="heading-font text-xl font-bold text-white mb-6">Get in Touch</h3>
 
               <div className="space-y-5">
@@ -71,14 +71,14 @@ export default function Contact() {
                     </div>
                     <div>
                       <p className="text-slate-500 text-xs">{label}</p>
-                      <p className="text-slate-200 font-medium">{value}</p>
+                      <p className="text-slate-200 font-medium break-all text-sm sm:text-base">{value}</p>
                     </div>
                   </a>
                 ))}
               </div>
 
               {/* Availability */}
-              <div className="mt-8 p-5 rounded-2xl flex items-center gap-3"
+              <div className="mt-6 sm:mt-8 p-4 sm:p-5 rounded-2xl flex items-center gap-3 flex-wrap"
                 style={{ background: 'rgba(16, 185, 129, 0.08)', border: '1px solid rgba(16, 185, 129, 0.2)' }}
               >
                 <span className="w-3 h-3 rounded-full bg-emerald-400 animate-pulse" />
@@ -87,7 +87,7 @@ export default function Contact() {
             </div>
 
             {/* Social */}
-            <div className="glass-card rounded-3xl p-10">
+            <div className="glass-card rounded-3xl p-6 sm:p-8 lg:p-10">
               <p className="text-slate-500 text-sm mb-4">Find me on</p>
               <div className="grid grid-cols-2 gap-3">
                 {social.map((s) => {
@@ -117,7 +117,7 @@ export default function Contact() {
             initial={{ opacity: 0, x: 40 }}
             animate={inView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.7, delay: 0.3 }}
-            className="glass-card rounded-3xl p-12"
+            className="glass-card rounded-3xl p-6 sm:p-8 lg:p-12"
           >
             <h3 className="heading-font text-xl font-bold text-white mb-6">Send a Message</h3>
             <form onSubmit={handleSubmit} className="space-y-5">

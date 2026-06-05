@@ -1,7 +1,7 @@
 export const portfolioData = {
   personal: {
     name: "Yassine Souissi",
-    brand: "LOORD.Y",
+    brand: "LOORD.Y!",
     tagline: "Product Designer & Digital Creative Director",
     subtitle: "Crafting digital experiences that leave a mark.",
     bio: "I'm a 19-year-old digital creative from Tunisia, studying Media Sciences at the 'Al-Fadil Bin Ashour' Institute. I blend design thinking with technical execution to build products people actually love using.",
@@ -9,22 +9,22 @@ export const portfolioData = {
     email: "yassinesouissi619@gmail.com",
     location: "Tunisia",
     available: true,
-    photo1: "/images/me1.jpeg",
-    photo2: "/images/me2.jpeg",
+    photo1: `${import.meta.env.BASE_URL}images/me1.jpeg`,
+    photo2: `${import.meta.env.BASE_URL}images/me2.jpeg`,
   },
 
   stats: [
-    { value: "10+", label: "Years Experience" },
-    { value: "150+", label: "Projects Completed" },
-    { value: "200+", label: "Happy Clients" },
-    { value: "3+", label: "Services Offered" },
+    { value: "5+",   label: "Years Experience"   },
+    { value: "22+",  label: "Projects Completed" },
+    { value: "500+", label: "GitHub Commits"     },
+    { value: "10+",  label: "Tools Mastered"     },
   ],
 
   social: [
-    { name: "GitHub",    url: "https://github.com/LOORDyassin",             icon: "FaGithub" },
-    { name: "LinkedIn",  url: "https://linkedin.com/in/loord-yassine-souissi", icon: "FaLinkedin" },
-    { name: "Instagram", url: "https://instagram.com/loord.noya",            icon: "FaInstagram" },
-    { name: "Facebook",  url: "#",                                            icon: "FaFacebook" },
+    { name: "GitHub",    url: "https://github.com/LOORDyassin",                            icon: "FaGithub" },
+    { name: "LinkedIn",  url: "https://www.linkedin.com/in/yassine-souissi-34a8482a7/",   icon: "FaLinkedin" },
+    { name: "Instagram", url: "https://www.instagram.com/loord.y19/",                     icon: "FaInstagram" },
+    { name: "Facebook",  url: "https://www.facebook.com/yassine.souissi.19",              icon: "FaFacebook" },
   ],
 
   technicalSkills: [
@@ -73,7 +73,7 @@ export const portfolioData = {
       title: "Product Interaction Web App",
       description: "A full-featured interactive web application for product management with dynamic UI and smooth user experience.",
       tags: ["HTML", "CSS", "JavaScript", "UI/UX"],
-      image: null,
+      image: "https://images.unsplash.com/photo-1551650975-87deedd944c3?w=800&q=80",
       link: "https://github.com/LOORDyassin",
       live: "#",
       featured: true,
@@ -84,7 +84,7 @@ export const portfolioData = {
       title: "Portfolio Website",
       description: "Personal portfolio website showcasing my work, skills, and creative direction — designed and developed from scratch.",
       tags: ["HTML", "CSS", "JavaScript", "Figma"],
-      image: null,
+      image: "https://images.unsplash.com/photo-1547658719-da2b51169166?w=800&q=80",
       link: "https://github.com/LOORDyassin",
       live: "https://loordyassin.github.io/portfolio/",
       featured: true,
@@ -95,7 +95,7 @@ export const portfolioData = {
       title: "Brand Identity Design",
       description: "Complete visual identity package including logos, color palettes, typography guidelines, and marketing materials.",
       tags: ["Figma", "Photoshop", "Branding"],
-      image: null,
+      image: "https://images.unsplash.com/photo-1561070791-2526d30994b5?w=800&q=80",
       link: "https://github.com/LOORDyassin",
       live: "#",
       featured: false,
@@ -106,7 +106,7 @@ export const portfolioData = {
       title: "Social Media Ad Campaign",
       description: "Series of high-conversion advertisement designs for social platforms, focused on engagement and brand awareness.",
       tags: ["Photoshop", "Graphic Design", "Marketing"],
-      image: null,
+      image: "https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?w=800&q=80",
       link: "https://github.com/LOORDyassin",
       live: "#",
       featured: false,
@@ -117,7 +117,7 @@ export const portfolioData = {
       title: "8 Ball Pool Gaming Platform",
       description: "Dedicated gaming service platform with coaching resources, account management, and community features.",
       tags: ["Gaming", "Community", "Service"],
-      image: null,
+      image: "https://images.unsplash.com/photo-1552820728-8b83bb6b773f?w=800&q=80",
       link: "https://github.com/LOORDyassin",
       live: "#",
       featured: false,
@@ -127,10 +127,10 @@ export const portfolioData = {
 
   education: [
     {
-      school: "Al-Fadil Bin Ashour Institute",
-      degree: "Media Sciences",
-      year: "2023 – Present",
-      description: "Studying media sciences with a focus on digital communication, design thinking, and creative direction.",
+      school: "Institut Supérieur d'Informatique et de Multimédia de Sfax (ISIMS)",
+      degree: "Computer Science & Big Data",
+      year: "2025 – Present",
+      description: "Bridging code and creativity — studying CS & Big Data at ISIMS Sfax while mastering web dev, mobile apps, AI, UI/UX design, and digital media to craft complete digital experiences.",
     },
   ],
 };

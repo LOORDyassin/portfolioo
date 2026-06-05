@@ -9,12 +9,12 @@ export default function Footer() {
   const year = new Date().getFullYear();
 
   return (
-    <footer className="border-t border-white/5 py-14">
-      <div className="max-w-7xl mx-auto px-8 lg:px-12 flex flex-col sm:flex-row items-center justify-between gap-6">
+    <footer className="border-t border-white/5 py-10 sm:py-14">
+      <div className="max-w-7xl mx-auto px-4 sm:px-8 lg:px-12 flex flex-col sm:flex-row items-center justify-between gap-4 sm:gap-6 text-center sm:text-left">
         <div>
           <p className="heading-font font-bold text-lg">
             <span className="gradient-text">LOORD</span>
-            <span className="text-white">.Y</span>
+            <span className="text-white">.Y!</span>
           </p>
           <p className="text-slate-600 text-sm mt-1">
             © {year} {personal.name}. All rights reserved.

@@ -11,21 +11,21 @@ export default function Services() {
   const inView = useInView(ref, { once: true, margin: '-100px' });
 
   return (
-    <section id="services" className="relative py-32 overflow-hidden">
+    <section id="services" className="relative py-16 sm:py-24 lg:py-32 overflow-hidden">
       <div className="orb w-80 h-80 bg-pink-500/10 right-0 bottom-0" />
 
-      <div className="max-w-7xl mx-auto px-8 lg:px-12">
+      <div className="max-w-7xl mx-auto px-4 sm:px-8 lg:px-12">
         <motion.div
           ref={ref}
           initial={{ opacity: 0, y: 40 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.7 }}
-          className="text-center mb-16"
+          className="text-center mb-8 sm:mb-12 lg:mb-16"
         >
           <div className="section-tag inline-flex">
             <span className="text-violet-400">03</span> Services
           </div>
-          <h2 className="heading-font text-4xl lg:text-5xl font-bold text-white mt-2">
+          <h2 className="heading-font text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold text-white mt-2">
             What I <span className="gradient-text">Can Do for You</span>
           </h2>
           <p className="text-slate-400 mt-4 max-w-xl mx-auto">
@@ -33,7 +33,7 @@ export default function Services() {
           </p>
         </motion.div>
 
-        <div className="grid md:grid-cols-3 gap-6">
+        <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-6">
           {services.map((service, i) => {
             const Icon = iconMap[service.icon];
             return (
@@ -43,7 +43,7 @@ export default function Services() {
                 animate={inView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.6, delay: i * 0.15 }}
                 whileHover={{ y: -8 }}
-                className="glass-card rounded-3xl p-12 group cursor-default relative overflow-hidden"
+                className="glass-card rounded-3xl p-6 sm:p-8 lg:p-12 group cursor-default relative overflow-hidden"
               >
                 {/* Gradient accent bar */}
                 <div className={`absolute top-0 left-0 right-0 h-1 bg-gradient-to-r ${service.gradient} rounded-t-3xl`} />

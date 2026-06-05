@@ -51,21 +51,21 @@ export default function Skills() {
   const inView = useInView(ref, { once: true, margin: '-100px' });
 
   return (
-    <section id="skills" className="relative py-32 overflow-hidden">
+    <section id="skills" className="relative py-16 sm:py-24 lg:py-32 overflow-hidden">
       <div className="orb w-96 h-96 bg-cyan-500/8 -left-40 top-1/2" />
 
-      <div className="max-w-7xl mx-auto px-8 lg:px-12">
+      <div className="max-w-7xl mx-auto px-4 sm:px-8 lg:px-12">
         <motion.div
           ref={ref}
           initial={{ opacity: 0, y: 40 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.7 }}
-          className="text-center mb-16"
+          className="text-center mb-8 sm:mb-12 lg:mb-16"
         >
           <div className="section-tag inline-flex">
             <span className="text-violet-400">02</span> My Skills
           </div>
-          <h2 className="heading-font text-4xl lg:text-5xl font-bold text-white mt-2">
+          <h2 className="heading-font text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold text-white mt-2">
             What I <span className="gradient-text">Bring to the Table</span>
           </h2>
           <p className="text-slate-400 mt-4 max-w-xl mx-auto">
@@ -79,13 +79,13 @@ export default function Skills() {
           transition={{ duration: 0.7, delay: 0.15 }}
         >
           <BrowserFrame>
-            <div className="grid lg:grid-cols-2 gap-12">
+            <div className="grid lg:grid-cols-2 gap-6 lg:gap-12">
               {/* Technical */}
               <motion.div
                 initial={{ opacity: 0, x: -40 }}
                 animate={inView ? { opacity: 1, x: 0 } : {}}
                 transition={{ duration: 0.7, delay: 0.2 }}
-                className="glass-card rounded-3xl p-8 sm:p-12"
+                className="glass-card rounded-3xl p-5 sm:p-8 lg:p-12"
               >
                 <h3 className="heading-font text-xl font-bold text-white mb-8 flex items-center gap-3">
                   <span className="w-8 h-8 rounded-lg bg-violet-500/20 flex items-center justify-center text-violet-400 text-xs font-mono">01</span>
@@ -101,7 +101,7 @@ export default function Skills() {
                 initial={{ opacity: 0, x: 40 }}
                 animate={inView ? { opacity: 1, x: 0 } : {}}
                 transition={{ duration: 0.7, delay: 0.3 }}
-                className="glass-card rounded-3xl p-8 sm:p-12"
+                className="glass-card rounded-3xl p-5 sm:p-8 lg:p-12"
               >
                 <h3 className="heading-font text-xl font-bold text-white mb-8 flex items-center gap-3">
                   <span className="w-8 h-8 rounded-lg bg-cyan-500/20 flex items-center justify-center text-cyan-400 text-xs font-mono">02</span>

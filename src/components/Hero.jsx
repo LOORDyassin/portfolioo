@@ -14,8 +14,8 @@ export default function Hero() {
       <div className="orb w-80 h-80 bg-cyan-500/15 bottom-32 right-0" />
       <div className="orb w-64 h-64 bg-pink-500/10 top-1/2 left-1/2 -translate-x-1/2" />
 
-      <div className="max-w-7xl mx-auto px-8 lg:px-12 pt-28 pb-20 w-full">
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
+      <div className="max-w-7xl mx-auto px-4 sm:px-8 lg:px-12 pt-24 sm:pt-28 pb-14 sm:pb-20 w-full">
+        <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-center">
           {/* Left — text */}
           <motion.div
             initial={{ opacity: 0, x: -60 }}
@@ -57,7 +57,7 @@ export default function Hero() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.5 }}
-              className="flex flex-wrap gap-4 mt-10"
+              className="flex flex-wrap gap-4 mt-6 sm:mt-10"
             >
               <button
                 className="btn-primary"
@@ -78,7 +78,7 @@ export default function Hero() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.6 }}
-              className="flex items-center gap-5 mt-10"
+              className="flex items-center gap-5 mt-6 sm:mt-10"
             >
               {social.map((s) => {
                 const Icon = iconMap[s.icon];
@@ -104,12 +104,12 @@ export default function Hero() {
             initial={{ opacity: 0, x: 60 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, ease: 'easeOut', delay: 0.2 }}
-            className="relative flex flex-col items-center px-12 lg:px-10"
+            className="relative flex flex-col items-center px-0 sm:px-6 lg:px-10"
           >
             {/* Photo frame — badges are siblings of the photo, never inside overflow-hidden */}
-            <div className="relative w-80 lg:w-96">
+            <div className="relative w-full max-w-xs sm:w-80 lg:w-96">
               <div className="absolute inset-0 rounded-3xl glow-purple" />
-              <div className="w-full h-96 lg:h-[480px] rounded-3xl overflow-hidden"
+              <div className="w-full h-64 sm:h-80 md:h-96 lg:h-[480px] rounded-3xl overflow-hidden"
                 style={{ border: '2px solid rgba(124, 58, 237, 0.4)' }}
               >
                 <img
@@ -128,10 +128,10 @@ export default function Hero() {
               <motion.div
                 animate={{ y: [0, -8, 0] }}
                 transition={{ repeat: Infinity, duration: 3, ease: 'easeInOut' }}
-                className="absolute -right-14 top-8 z-20 rounded-2xl px-5 py-3 whitespace-nowrap"
+                className="hidden sm:block absolute -right-14 top-8 z-20 rounded-2xl px-5 py-3 whitespace-nowrap"
                 style={{ background: 'rgba(8,8,20,0.95)', border: '1px solid rgba(124,58,237,0.45)', boxShadow: '0 8px 24px rgba(0,0,0,0.6)' }}
               >
-                <p className="text-violet-400 font-bold text-lg leading-none">10+</p>
+                <p className="text-violet-400 font-bold text-lg leading-none">5+</p>
                 <p className="text-slate-300 text-xs mt-1">Years Exp.</p>
               </motion.div>
 
@@ -139,16 +139,16 @@ export default function Hero() {
               <motion.div
                 animate={{ y: [0, 8, 0] }}
                 transition={{ repeat: Infinity, duration: 3.5, ease: 'easeInOut', delay: 0.5 }}
-                className="absolute -left-14 bottom-20 z-20 rounded-2xl px-5 py-3 whitespace-nowrap"
+                className="hidden sm:block absolute -left-14 bottom-20 z-20 rounded-2xl px-5 py-3 whitespace-nowrap"
                 style={{ background: 'rgba(8,8,20,0.95)', border: '1px solid rgba(6,182,212,0.45)', boxShadow: '0 8px 24px rgba(0,0,0,0.6)' }}
               >
-                <p className="text-cyan-400 font-bold text-lg leading-none">150+</p>
+                <p className="text-cyan-400 font-bold text-lg leading-none">22+</p>
                 <p className="text-slate-300 text-xs mt-1">Projects Done</p>
               </motion.div>
             </div>
 
             {/* Caption — completely outside the photo frame */}
-            <div className="w-80 lg:w-96 mt-5 px-1 flex items-center justify-between">
+            <div className="w-full max-w-xs sm:w-80 lg:w-96 mt-5 px-1 flex items-center justify-between">
               <div>
                 <p className="heading-font font-bold text-base text-white leading-tight">{personal.name}</p>
                 <p className="text-sm text-violet-300 mt-0.5">{personal.brand}</p>
@@ -161,7 +161,7 @@ export default function Hero() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.7 }}
-              className="grid grid-cols-2 sm:grid-cols-4 gap-4 mt-10 w-full"
+              className="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4 mt-6 sm:mt-10 w-full"
             >
               {stats.map((s, i) => (
                 <div key={i} className="glass-card rounded-2xl p-5 text-center">
@@ -178,7 +178,7 @@ export default function Hero() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 1 }}
-          className="flex justify-center mt-16"
+          className="flex justify-center mt-8 sm:mt-16"
         >
           <motion.div
             animate={{ y: [0, 10, 0] }}
