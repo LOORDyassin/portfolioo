@@ -569,6 +569,76 @@ body {
   .marquee-pill-label { font-size: 10px; }
 }
 
+/* ── Service cards ── */
+.service-card {
+  position: relative;
+  background: rgba(14, 14, 24, 0.85);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-radius: 24px;
+  padding: 32px 28px 28px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.service-card:hover {
+  border-color: var(--svc-accent);
+  box-shadow: 0 20px 48px rgba(0, 0, 0, 0.4);
+}
+
+.service-card-bar {
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 2px;
+  opacity: 0.7;
+  transition: opacity 0.3s ease;
+}
+
+.service-card:hover .service-card-bar {
+  opacity: 1;
+}
+
+.service-icon-box {
+  width: 52px;
+  height: 52px;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.service-number {
+  font-size: 13px;
+  font-weight: 700;
+  font-family: 'Space Grotesk', sans-serif;
+  color: rgba(255, 255, 255, 0.1);
+  letter-spacing: 0.05em;
+  transition: color 0.3s ease;
+}
+
+.service-card:hover .service-number {
+  color: rgba(255, 255, 255, 0.2);
+}
+
+.service-tag {
+  font-size: 11px;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: 6px;
+  color: #64748b;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+
+.service-card:hover .service-tag {
+  color: var(--svc-accent);
+  border-color: var(--svc-accent);
+  opacity: 0.85;
+}
+
 /* ═══════════════════════════════════════
    LIGHT MODE OVERRIDES
    Dark mode = default (unchanged)
