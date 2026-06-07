@@ -1,0 +1,131 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 560" width="400" height="560">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#080814"/>
+      <stop offset="50%" stop-color="#0a1208"/>
+      <stop offset="100%" stop-color="#080814"/>
+    </linearGradient>
+    <linearGradient id="flagFade" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#080814" stop-opacity="0"/>
+      <stop offset="100%" stop-color="#080814" stop-opacity="1"/>
+    </linearGradient>
+    <linearGradient id="wmHighlight" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="rgba(255,255,255,0.12)"/>
+      <stop offset="100%" stop-color="rgba(255,255,255,0)"/>
+    </linearGradient>
+    <pattern id="keffiyeh" x="0" y="0" width="28" height="28" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+      <rect width="28" height="28" fill="transparent"/>
+      <rect x="0" y="0" width="14" height="14" fill="rgba(206,17,38,0.04)"/>
+      <rect x="14" y="14" width="14" height="14" fill="rgba(206,17,38,0.04)"/>
+    </pattern>
+    <filter id="softGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="5" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="dropShadow">
+      <feDropShadow dx="0" dy="4" stdDeviation="8" flood-color="rgba(0,0,0,0.55)"/>
+    </filter>
+    <filter id="leafGlow">
+      <feDropShadow dx="0" dy="1" stdDeviation="2" flood-color="rgba(76,175,80,0.4)"/>
+    </filter>
+  </defs>
+
+  <!-- Dark background -->
+  <rect width="400" height="560" fill="url(#bgGrad)"/>
+  <rect width="400" height="560" fill="url(#keffiyeh)"/>
+
+  <!-- ══════════ PALESTINIAN FLAG ══════════ -->
+  <!-- Black stripe -->
+  <rect x="0" y="0" width="400" height="87" fill="#1C1C1C"/>
+  <!-- White stripe -->
+  <rect x="0" y="87" width="400" height="87" fill="#F5F5F5"/>
+  <!-- Green stripe -->
+  <rect x="0" y="174" width="400" height="87" fill="#006B35"/>
+  <!-- Red triangle -->
+  <polygon points="0,0 158,130 0,261" fill="#C8102E"/>
+
+  <!-- Flag-to-dark fade -->
+  <rect x="0" y="230" width="400" height="65" fill="url(#flagFade)"/>
+
+  <!-- ══════════ DIVIDER + STARS ══════════ -->
+  <line x1="44" y1="285" x2="356" y2="285" stroke="rgba(255,255,255,0.12)" stroke-width="1"/>
+  <!-- Left star -->
+  <polygon points="52,278 55,269 58,278 67,278 60,284 63,293 55,287 47,293 50,284 43,278"
+    fill="rgba(255,255,255,0.25)"/>
+  <!-- Right star -->
+  <polygon points="348,278 351,269 354,278 363,278 356,284 359,293 351,287 343,293 346,284 339,278"
+    fill="rgba(255,255,255,0.25)"/>
+
+  <!-- ══════════ OLIVE BRANCHES ══════════ -->
+  <!-- Left branch (bottom-left to top-right) -->
+  <g filter="url(#leafGlow)">
+    <line x1="18" y1="378" x2="80" y2="296" stroke="#388E3C" stroke-width="2.5"/>
+    <ellipse cx="34" cy="362" rx="10" ry="5" fill="#4CAF50" transform="rotate(-52 34 362)"/>
+    <ellipse cx="30" cy="356" rx="9"  ry="4.5" fill="#2E7D32" transform="rotate(-52 30 356)"/>
+    <ellipse cx="48" cy="344" rx="10" ry="5" fill="#4CAF50" transform="rotate(-47 48 344)"/>
+    <ellipse cx="44" cy="338" rx="9"  ry="4.5" fill="#2E7D32" transform="rotate(-47 44 338)"/>
+    <ellipse cx="62" cy="326" rx="10" ry="5" fill="#4CAF50" transform="rotate(-42 62 326)"/>
+    <ellipse cx="58" cy="320" rx="9"  ry="4.5" fill="#2E7D32" transform="rotate(-42 58 320)"/>
+    <ellipse cx="74" cy="309" rx="9"  ry="4.5" fill="#4CAF50" transform="rotate(-38 74 309)"/>
+  </g>
+  <!-- Right branch (mirror) -->
+  <g filter="url(#leafGlow)">
+    <line x1="382" y1="378" x2="320" y2="296" stroke="#388E3C" stroke-width="2.5"/>
+    <ellipse cx="366" cy="362" rx="10" ry="5" fill="#4CAF50" transform="rotate(52 366 362)"/>
+    <ellipse cx="370" cy="356" rx="9"  ry="4.5" fill="#2E7D32" transform="rotate(52 370 356)"/>
+    <ellipse cx="352" cy="344" rx="10" ry="5" fill="#4CAF50" transform="rotate(47 352 344)"/>
+    <ellipse cx="356" cy="338" rx="9"  ry="4.5" fill="#2E7D32" transform="rotate(47 356 338)"/>
+    <ellipse cx="338" cy="326" rx="10" ry="5" fill="#4CAF50" transform="rotate(42 338 326)"/>
+    <ellipse cx="342" cy="320" rx="9"  ry="4.5" fill="#2E7D32" transform="rotate(42 342 320)"/>
+    <ellipse cx="326" cy="309" rx="9"  ry="4.5" fill="#4CAF50" transform="rotate(38 326 309)"/>
+  </g>
+
+  <!-- ══════════ WATERMELON SLICE ══════════ -->
+  <!-- Center: (200,430), radius layers from outside in -->
+  <g filter="url(#dropShadow)">
+    <!-- Outermost dark-green rind -->
+    <path d="M 90 430 A 110 110 0 0 0 310 430 Z" fill="#1B5E20"/>
+    <!-- Mid rind -->
+    <path d="M 100 430 A 100 100 0 0 0 300 430 Z" fill="#2E7D32"/>
+    <!-- White rind layer -->
+    <path d="M 112 430 A 88 88 0 0 0 288 430 Z" fill="#E8F5E9"/>
+    <!-- Red flesh -->
+    <path d="M 122 430 A 78 78 0 0 0 278 430 Z" fill="#C62828"/>
+    <!-- Flesh highlight -->
+    <path d="M 122 430 A 78 78 0 0 0 278 430 Z" fill="url(#wmHighlight)" opacity="0.6"/>
+  </g>
+
+  <!-- Watermelon seeds -->
+  <g fill="#0e0e0e" filter="url(#dropShadow)">
+    <ellipse cx="150" cy="410" rx="5.5" ry="8.5" transform="rotate(-22 150 410)"/>
+    <ellipse cx="178" cy="395" rx="5.5" ry="8.5" transform="rotate(-10 178 395)"/>
+    <ellipse cx="200" cy="390" rx="5.5" ry="8.5"/>
+    <ellipse cx="222" cy="395" rx="5.5" ry="8.5" transform="rotate(10 222 395)"/>
+    <ellipse cx="250" cy="410" rx="5.5" ry="8.5" transform="rotate(22 250 410)"/>
+  </g>
+
+  <!-- ══════════ FREE TEXT ══════════ -->
+  <!-- Glow layer -->
+  <text x="200" y="490" text-anchor="middle"
+    font-family="'Arial Black',Impact,Arial,sans-serif"
+    font-size="60" font-weight="900" fill="#C8102E" opacity="0.22"
+    filter="url(#softGlow)" letter-spacing="5">FREE</text>
+  <!-- Main white FREE -->
+  <text x="200" y="490" text-anchor="middle"
+    font-family="'Arial Black',Impact,Arial,sans-serif"
+    font-size="60" font-weight="900" fill="#FFFFFF" letter-spacing="5">FREE</text>
+
+  <!-- PALESTINE text -->
+  <text x="200" y="530" text-anchor="middle"
+    font-family="'Arial Black',Impact,Arial,sans-serif"
+    font-size="25" font-weight="900" fill="#C8102E" letter-spacing="8">PALESTINE</text>
+
+  <!-- Green accent lines -->
+  <line x1="38" y1="541" x2="148" y2="541" stroke="#006B35" stroke-width="1.5" opacity="0.75"/>
+  <line x1="252" y1="541" x2="362" y2="541" stroke="#006B35" stroke-width="1.5" opacity="0.75"/>
+
+  <!-- Arabic text: فلسطين حرة -->
+  <text x="200" y="557" text-anchor="middle"
+    font-family="Arial,sans-serif" font-size="13"
+    fill="rgba(255,255,255,0.38)" letter-spacing="2">&#x641;&#x644;&#x633;&#x637;&#x64A;&#x646; &#x62D;&#x631;&#x629;</text>
+</svg>

@@ -50,7 +50,13 @@ export default function Hero() {
               transition={{ delay: 0.4 }}
               className="text-slate-400 text-base sm:text-lg leading-relaxed mt-6 max-w-lg"
             >
-              {personal.subtitle} From sleek UI designs to production-ready code — I build digital products that stand out.
+              I design{' '}
+              <span className="text-violet-400 font-medium">brands</span>,
+              build{' '}
+              <span className="text-cyan-400 font-medium">web experiences</span>,
+              and craft{' '}
+              <span className="text-emerald-400 font-medium">video content</span>{' '}
+              — delivering complete digital solutions from concept to launch, with precision and style.
             </motion.p>
 
             <motion.div
@@ -82,6 +88,29 @@ export default function Hero() {
             >
               {social.map((s) => {
                 const Icon = iconMap[s.icon];
+
+                if (s.name === 'GitHub') {
+                  return (
+                    <motion.a
+                      key={s.name}
+                      href={personal.photo2}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      whileHover={{ scale: 1.2, y: -3 }}
+                      whileTap={{ scale: 0.9 }}
+                      className="w-10 h-10 rounded-full overflow-hidden"
+                      style={{ border: '2px solid rgba(139,92,246,0.5)' }}
+                      title="View photo"
+                    >
+                      <img
+                        src={personal.photo2}
+                        alt={personal.name}
+                        className="w-full h-full object-cover object-top"
+                      />
+                    </motion.a>
+                  );
+                }
+
                 return (
                   <motion.a
                     key={s.name}
@@ -113,14 +142,10 @@ export default function Hero() {
                 style={{ border: '2px solid rgba(124, 58, 237, 0.4)' }}
               >
                 <img
-                  src={personal.photo1}
-                  alt={personal.name}
-                  className="w-full h-full object-cover object-top"
-                  onError={(e) => {
-                    e.target.style.display = 'none';
-                    e.target.parentElement.style.background = 'linear-gradient(135deg, #1e1b4b, #0c4a6e)';
-                    e.target.parentElement.innerHTML += `<div style="display:flex;align-items:center;justify-content:center;height:100%;font-size:80px;">👤</div>`;
-                  }}
+                  src={`${import.meta.env.BASE_URL}free-palestine.svg`}
+                  alt="Free Palestine — فلسطين حرة"
+                  className="w-full h-full object-contain"
+                  style={{ background: '#080814' }}
                 />
               </div>
 
