@@ -138,10 +138,10 @@ export default function Skills() {
             <span className="text-violet-400">02</span> My Skills
           </div>
           <h2 className="heading-font text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold text-white mt-2">
-            What I <span className="gradient-text">Bring to the Table</span>
+            Skills & <span className="gradient-text">Technologies</span>
           </h2>
           <p className="text-slate-400 mt-4 max-w-xl mx-auto text-sm sm:text-base">
-            A blend of design sensibility and technical know-how, built over years of hands-on project work.
+            From development to creative design — the tools, languages, and technologies I use daily.
           </p>
         </motion.div>
 
