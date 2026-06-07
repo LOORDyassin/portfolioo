@@ -76,7 +76,7 @@ export const portfolioData = {
       title: "Web My Chat",
       description: "A full-stack real-time web chat application built from scratch — featuring user authentication, live messaging between users, and a clean responsive interface.",
       tags: ["PHP", "JavaScript", "CSS", "Real-time", "Auth"],
-      image: "https://images.unsplash.com/photo-1682941664177-7920d0e59418?w=800&q=80",
+      image: `${import.meta.env.BASE_URL}web-my-chat-banner.svg`,
       link: "https://github.com/LOORDyassin/web-my-chat",
       live: "#",
       featured: true,
