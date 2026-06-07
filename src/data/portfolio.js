@@ -47,7 +47,7 @@ export const portfolioData = {
     {
       icon: "FaPaintBrush",
       title: "Graphic Design",
-      description: "Crafting visual identities, marketing materials, and brand assets that capture attention and communicate your story with precision and style.",
+      description: "Delivering high-impact visual identities, advertising creatives, and brand collateral — designed to position your brand with clarity, consistency, and professional appeal.",
       tags: ["Brand Identity", "Social Media", "Print Design", "Advertising"],
       gradient: "from-purple-600 to-pink-600",
       accent: "#a78bfa",
@@ -55,7 +55,7 @@ export const portfolioData = {
     {
       icon: "FaCode",
       title: "Web Development",
-      description: "Building fast, responsive, and pixel-perfect websites using modern technologies — from interactive UIs to fully deployed production apps.",
+      description: "Engineering responsive, performant web experiences with modern frameworks and clean code architecture — built to scale, optimized for speed, and crafted for exceptional user experience.",
       tags: ["React", "JavaScript", "HTML & CSS", "Performance"],
       gradient: "from-cyan-500 to-blue-600",
       accent: "#60a5fa",
@@ -63,7 +63,7 @@ export const portfolioData = {
     {
       icon: "FaVideo",
       title: "Video Design",
-      description: "Producing compelling video content — from motion graphics and transitions to fully edited promotional reels and social media videos.",
+      description: "Producing polished video content tailored for digital platforms — from cinematic promotional edits and motion graphics to engaging short-form reels built for maximum audience impact.",
       tags: ["Video Editing", "Motion Graphics", "Premiere Pro", "Reels"],
       gradient: "from-emerald-500 to-teal-600",
       accent: "#34d399",
