@@ -109,7 +109,7 @@ export default function Hero() {
             {/* Photo frame — badges are siblings of the photo, never inside overflow-hidden */}
             <div className="relative w-full max-w-xs sm:w-80 lg:w-96">
               <div className="absolute inset-0 rounded-3xl glow-purple" />
-              <div className="w-full h-64 sm:h-80 md:h-96 lg:h-[480px] rounded-3xl overflow-hidden"
+              <div className="w-full h-[420px] sm:h-[480px] md:h-[520px] lg:h-[560px] rounded-3xl overflow-hidden"
                 style={{ border: '2px solid rgba(124, 58, 237, 0.4)' }}
               >
                 <img

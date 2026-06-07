@@ -105,7 +105,7 @@ export default function About() {
             className="relative"
           >
             <div className="relative">
-              <div className="w-full h-56 sm:h-72 md:h-80 lg:h-[500px] rounded-3xl overflow-hidden"
+              <div className="w-full h-[420px] sm:h-[480px] md:h-[520px] lg:h-[580px] rounded-3xl overflow-hidden"
                 style={{ border: '2px solid rgba(6, 182, 212, 0.3)' }}
               >
                 <img
