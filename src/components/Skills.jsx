@@ -1,11 +1,11 @@
 import { useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
 import {
-  FaReact, FaHtml5, FaCss3Alt, FaPython, FaGitAlt,
+  FaReact, FaHtml5, FaCss3Alt, FaPython, FaGitAlt, FaJava,
   FaLightbulb, FaUsers, FaComments, FaBolt, FaClipboardCheck,
 } from 'react-icons/fa';
 import {
-  SiFlutter, SiDart, SiJavascript, SiFirebase, SiFigma,
+  SiFlutter, SiDart, SiJavascript, SiTypescript, SiFirebase, SiFigma, SiC,
 } from 'react-icons/si';
 import { MdDesignServices, MdBrandingWatermark, MdVideoCameraBack } from 'react-icons/md';
 import {
@@ -17,15 +17,18 @@ import { BsStars, BsInstagram } from 'react-icons/bs';
 const skillCategories = [
   {
     label: 'Development',
-    accent: '#ef4444',
+    accent: '#60a5fa',
     skills: [
       { name: 'React',           icon: FaReact },
       { name: 'Flutter',         icon: SiFlutter },
       { name: 'Dart',            icon: SiDart },
       { name: 'JavaScript',      icon: SiJavascript },
+      { name: 'TypeScript',      icon: SiTypescript },
       { name: 'HTML',            icon: FaHtml5 },
       { name: 'CSS',             icon: FaCss3Alt },
       { name: 'Python',          icon: FaPython },
+      { name: 'C',               icon: SiC },
+      { name: 'Java',            icon: FaJava },
       { name: 'Firebase',        icon: SiFirebase },
       { name: 'API Integration', icon: TbApi },
       { name: 'Git',             icon: FaGitAlt },
