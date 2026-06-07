@@ -5,12 +5,13 @@ import {
   FaLightbulb, FaUsers, FaComments, FaBolt, FaClipboardCheck,
 } from 'react-icons/fa';
 import {
-  SiFlutter, SiDart, SiJavascript, SiFirebase,
-  SiVisualstudiocode, SiAdobephotoshop, SiAdobeillustrator,
-  SiAdobepremierepro, SiFigma,
+  SiFlutter, SiDart, SiJavascript, SiFirebase, SiFigma,
 } from 'react-icons/si';
 import { MdDesignServices, MdBrandingWatermark, MdVideoCameraBack } from 'react-icons/md';
-import { TbApi } from 'react-icons/tb';
+import {
+  TbApi, TbBrandVscode, TbBrandAdobePhotoshop,
+  TbBrandAdobeIllustrator, TbBrandAdobePremier,
+} from 'react-icons/tb';
 import { BsStars, BsInstagram } from 'react-icons/bs';
 
 const skillCategories = [
@@ -28,7 +29,7 @@ const skillCategories = [
       { name: 'Firebase',        icon: SiFirebase },
       { name: 'API Integration', icon: TbApi },
       { name: 'Git',             icon: FaGitAlt },
-      { name: 'VS Code',         icon: SiVisualstudiocode },
+      { name: 'VS Code',         icon: TbBrandVscode },
     ],
   },
   {
@@ -37,9 +38,9 @@ const skillCategories = [
     skills: [
       { name: 'UI/UX Design',   icon: SiFigma },
       { name: 'Graphic Design', icon: MdDesignServices },
-      { name: 'Photoshop',      icon: SiAdobephotoshop },
-      { name: 'Illustrator',    icon: SiAdobeillustrator },
-      { name: 'Premiere Pro',   icon: SiAdobepremierepro },
+      { name: 'Photoshop',      icon: TbBrandAdobePhotoshop },
+      { name: 'Illustrator',    icon: TbBrandAdobeIllustrator },
+      { name: 'Premiere Pro',   icon: TbBrandAdobePremier },
       { name: 'Branding',       icon: MdBrandingWatermark },
       { name: 'Social Media',   icon: BsInstagram },
       { name: 'Video Editing',  icon: MdVideoCameraBack },
