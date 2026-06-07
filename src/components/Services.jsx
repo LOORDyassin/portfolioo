@@ -32,7 +32,7 @@ export default function Services() {
             What I <span className="gradient-text">Can Do for You</span>
           </h2>
           <p className="text-slate-400 mt-4 max-w-xl mx-auto text-sm sm:text-base">
-            From concept to launch — I handle every layer of the creative and technical stack.
+            Specialized in design, development, and video production — delivering end-to-end creative solutions that elevate brands and drive real results.
           </p>
         </motion.div>
 
