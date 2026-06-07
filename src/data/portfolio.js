@@ -107,9 +107,9 @@ export const portfolioData = {
     {
       id: 4,
       title: "Social Media Ad Campaign",
-      description: "Series of high-conversion advertisement designs for social platforms, focused on engagement and brand awareness.",
-      tags: ["Photoshop", "Graphic Design", "Marketing"],
-      image: "https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?w=800&q=80",
+      description: "A series of high-impact advertisement creatives designed for Instagram, Facebook, TikTok, and X — crafted in Photoshop and Illustrator for maximum engagement, brand awareness, and conversion.",
+      tags: ["Photoshop", "Illustrator", "Instagram", "Facebook"],
+      image: `${import.meta.env.BASE_URL}social-ads-banner.svg`,
       link: "https://github.com/LOORDyassin",
       live: "#",
       featured: false,
