@@ -16,8 +16,8 @@ const R = {
     `Yassine Souissi (a.k.a **LOORD.Y!**) is a 19-year-old digital creative from **${personal.location}**. He blends design thinking with technical execution to build products people love. 🎨💻`,
   ],
   skills: [
-    `**Technical Skills:**\n${technicalSkills.map(s => `• ${s.name} — ${s.level}%`).join('\n')}\n\n**Soft Skills:**\n${softSkills.map(s => `• ${s.name} — ${s.level}%`).join('\n')}`,
-    `Yassine is strongest in **Figma (90%)**, **UI/UX (85%)**, and **HTML5 (88%)**. He also knows Photoshop, JavaScript, and CSS very well!`,
+    `Here's what Yassine works with:\n\n**Development:**\nReact, Flutter, Dart, JavaScript, TypeScript, HTML, CSS, Python, C, Java, Firebase, Git, VS Code\n\n**Design & Media:**\nFigma (UI/UX), Photoshop, Illustrator, Premiere Pro, Graphic Design, Branding, Video Editing\n\n**Soft Skills:**\nProblem Solving, Teamwork, Communication, Creativity, Fast Learning, Project Management`,
+    `Yassine is a **full-stack creative** — equally strong in frontend development (React, JavaScript, TypeScript) and design tools (Figma, Photoshop, Premiere Pro). He also works with Flutter, Python, Firebase, and more!`,
   ],
   services: [
     `Yassine offers **3 core services:**\n\n${services.map(s => `🔹 **${s.title}**\n${s.description}`).join('\n\n')}`,
@@ -45,7 +45,7 @@ const R = {
     `Find Yassine on social media:\n${social.filter(s => s.url !== '#').map(s => `• **${s.name}**: ${s.url}`).join('\n')}`,
   ],
   tools: [
-    `Yassine's toolkit includes:\n🎨 **Design:** Figma, Adobe Photoshop, Canva\n💻 **Dev:** HTML, CSS, JavaScript, React\n🛠️ **Other:** VS Code, Git & GitHub, Chrome DevTools`,
+    `Yassine's toolkit includes:\n🎨 **Design:** Figma, Photoshop, Illustrator, Premiere Pro\n💻 **Dev:** React, JavaScript, TypeScript, Flutter, Python, Firebase\n🛠️ **Tools:** VS Code, Git & GitHub, Dart, Java, C`,
   ],
   price: [
     `Pricing depends on the project scope and complexity. The best way to get a quote is to reach out directly at **${personal.email}** — Yassine will get back to you quickly! 💬`,
