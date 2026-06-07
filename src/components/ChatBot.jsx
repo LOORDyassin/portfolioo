@@ -16,8 +16,15 @@ const R = {
     `Yassine Souissi (a.k.a **LOORD.Y!**) is a 19-year-old digital creative from **${personal.location}**. He blends design thinking with technical execution to build products people love. 🎨💻`,
   ],
   skills: [
-    `Here's what Yassine works with:\n\n**Development:**\nReact, Flutter, Dart, JavaScript, TypeScript, HTML, CSS, Python, C, Java, Firebase, Git, VS Code\n\n**Design & Media:**\nFigma (UI/UX), Photoshop, Illustrator, Premiere Pro, Graphic Design, Branding, Video Editing\n\n**Soft Skills:**\nProblem Solving, Teamwork, Communication, Creativity, Fast Learning, Project Management`,
-    `Yassine is a **full-stack creative** — equally strong in frontend development (React, JavaScript, TypeScript) and design tools (Figma, Photoshop, Premiere Pro). He also works with Flutter, Python, Firebase, and more!`,
+    `<div style="font-size:11px">
+<div style="color:#60a5fa;font-weight:700;letter-spacing:.1em;text-transform:uppercase;margin-bottom:6px">⚡ Development</div>
+<div style="display:flex;flex-wrap:wrap;gap:4px;margin-bottom:12px">${['React','Flutter','Dart','JavaScript','TypeScript','HTML','CSS','Python','C','Java','Firebase','Git','VS Code'].map(s=>`<span style="background:rgba(96,165,250,.12);border:1px solid rgba(96,165,250,.28);color:#93c5fd;padding:3px 9px;border-radius:100px;font-weight:600">${s}</span>`).join('')}</div>
+<div style="color:#a78bfa;font-weight:700;letter-spacing:.1em;text-transform:uppercase;margin-bottom:6px">🎨 Design &amp; Media</div>
+<div style="display:flex;flex-wrap:wrap;gap:4px;margin-bottom:12px">${['Figma','Photoshop','Illustrator','Premiere Pro','Graphic Design','Branding','Video Editing'].map(s=>`<span style="background:rgba(167,139,250,.12);border:1px solid rgba(167,139,250,.28);color:#c4b5fd;padding:3px 9px;border-radius:100px;font-weight:600">${s}</span>`).join('')}</div>
+<div style="color:#06b6d4;font-weight:700;letter-spacing:.1em;text-transform:uppercase;margin-bottom:6px">✨ Soft Skills</div>
+<div style="display:flex;flex-wrap:wrap;gap:4px">${['Problem Solving','Teamwork','Communication','Creativity','Fast Learning','Project Org.'].map(s=>`<span style="background:rgba(6,182,212,.12);border:1px solid rgba(6,182,212,.28);color:#67e8f9;padding:3px 9px;border-radius:100px;font-weight:600">${s}</span>`).join('')}</div>
+</div>`,
+    `Yassine is a <strong style="color:#a78bfa">full-stack creative</strong> — strong in both development (React, TypeScript, Flutter, Python) and design (Figma, Photoshop, Premiere Pro). Ask me more about any specific skill!`,
   ],
   services: [
     `Yassine offers **3 core services:**\n\n${services.map(s => `🔹 **${s.title}**\n${s.description}`).join('\n\n')}`,
