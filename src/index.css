@@ -469,16 +469,17 @@ body {
   }
 }
 
-/* ── Skills icon grid ── */
+/* ── Skills marquee layout ── */
 .skills-panel {
   background: rgba(12, 12, 20, 0.75);
+  -webkit-backdrop-filter: blur(24px);
   backdrop-filter: blur(24px);
   border: 1px solid rgba(255, 255, 255, 0.07);
   border-radius: 24px;
-  padding: 40px 44px;
+  padding: 40px 0;
 }
 
-.skill-dash {
+.marquee-dash {
   display: block;
   width: 28px;
   height: 2px;
@@ -486,74 +487,86 @@ body {
   flex-shrink: 0;
 }
 
-.skill-card-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(112px, 1fr));
-  gap: 10px;
+.marquee-outer {
+  overflow: hidden;
+  -webkit-mask-image: linear-gradient(90deg, transparent 0%, black 8%, black 92%, transparent 100%);
+  mask-image: linear-gradient(90deg, transparent 0%, black 8%, black 92%, transparent 100%);
 }
 
-.skill-icon-card {
+.marquee-outer:hover .marquee-track {
+  animation-play-state: paused;
+}
+
+.marquee-track {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
   gap: 10px;
-  padding: 20px 10px 18px;
-  background: rgba(255, 255, 255, 0.03);
-  border: 1px solid rgba(255, 255, 255, 0.07);
-  border-radius: 13px;
-  transition: background 0.22s ease, border-color 0.22s ease, box-shadow 0.22s ease;
+  width: max-content;
+  animation: marquee-scroll 35s linear infinite;
+}
+
+.marquee-reverse {
+  animation-direction: reverse;
+}
+
+@keyframes marquee-scroll {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-33.333%); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .marquee-track { animation: none; }
+}
+
+.marquee-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  padding: 10px 20px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 100px;
+  white-space: nowrap;
   cursor: default;
+  -webkit-user-select: none;
   user-select: none;
+  transition: background 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
-.skill-icon-wrap {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #6b7280;
-  transition: color 0.22s ease, transform 0.22s ease;
+.marquee-pill-icon {
+  color: #4b5563;
+  transition: color 0.2s ease;
+  flex-shrink: 0;
 }
 
-.skill-icon-label {
-  font-size: 10px;
+.marquee-pill-label {
+  font-size: 11px;
   font-weight: 700;
-  letter-spacing: 0.09em;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
   color: #4b5563;
-  text-align: center;
-  line-height: 1.3;
-  transition: color 0.22s ease;
+  transition: color 0.2s ease;
 }
 
-.skill-icon-card:hover {
-  background: rgba(255, 255, 255, 0.055);
-  border-color: var(--card-accent);
-  box-shadow: 0 0 20px color-mix(in srgb, var(--card-accent) 18%, transparent),
-              0 6px 24px rgba(0, 0, 0, 0.35);
+.marquee-pill:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: var(--pill-accent);
+  box-shadow: 0 0 14px color-mix(in srgb, var(--pill-accent) 20%, transparent);
 }
 
-.skill-icon-card:hover .skill-icon-wrap {
-  color: var(--card-accent);
-  transform: scale(1.2) translateY(-2px);
-}
-
-.skill-icon-card:hover .skill-icon-label {
-  color: #e2e8f0;
+.marquee-pill:hover .marquee-pill-icon,
+.marquee-pill:hover .marquee-pill-label {
+  color: var(--pill-accent);
 }
 
 @media (max-width: 768px) {
-  .skills-panel { padding: 24px 20px; }
-  .skill-card-grid {
-    grid-template-columns: repeat(auto-fill, minmax(90px, 1fr));
-    gap: 8px;
-  }
-  .skill-icon-card { padding: 16px 8px 14px; gap: 8px; }
+  .skills-panel { padding: 28px 0; }
+  .marquee-pill { padding: 9px 16px; gap: 7px; }
 }
 
 @media (max-width: 375px) {
-  .skills-panel { padding: 18px 14px; }
-  .skill-card-grid { grid-template-columns: repeat(3, 1fr); gap: 6px; }
+  .skills-panel { padding: 20px 0; }
+  .marquee-pill { padding: 8px 13px; gap: 6px; }
+  .marquee-pill-label { font-size: 10px; }
 }
 
 /* ═══════════════════════════════════════

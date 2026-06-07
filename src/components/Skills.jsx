@@ -18,6 +18,7 @@ const skillCategories = [
   {
     label: 'Development',
     accent: '#60a5fa',
+    reverse: false,
     skills: [
       { name: 'React',           icon: FaReact },
       { name: 'Flutter',         icon: SiFlutter },
@@ -38,6 +39,7 @@ const skillCategories = [
   {
     label: 'Design & Media',
     accent: '#a78bfa',
+    reverse: true,
     skills: [
       { name: 'UI/UX Design',   icon: SiFigma },
       { name: 'Graphic Design', icon: MdDesignServices },
@@ -52,6 +54,7 @@ const skillCategories = [
   {
     label: 'Soft Skills',
     accent: '#06b6d4',
+    reverse: false,
     skills: [
       { name: 'Problem Solving', icon: FaLightbulb },
       { name: 'Teamwork',        icon: FaUsers },
@@ -63,58 +66,53 @@ const skillCategories = [
   },
 ];
 
-function SkillCard({ skill, index, accent, inView }) {
-  const Icon = skill.icon;
+function MarqueeRow({ skills, accent, reverse }) {
+  const doubled = [...skills, ...skills, ...skills];
+  const Icon = null;
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 18, scale: 0.88 }}
-      animate={inView ? { opacity: 1, y: 0, scale: 1 } : {}}
-      transition={{ duration: 0.38, delay: index * 0.045, ease: [0.34, 1.56, 0.64, 1] }}
-      whileHover={{ y: -5, scale: 1.06 }}
-      className="skill-icon-card"
-      style={{ '--card-accent': accent }}
-    >
-      <span className="skill-icon-wrap">
-        <Icon size={26} />
-      </span>
-      <span className="skill-icon-label">{skill.name}</span>
-    </motion.div>
+    <div className="marquee-outer">
+      <div className={`marquee-track${reverse ? ' marquee-reverse' : ''}`}>
+        {doubled.map((skill, i) => {
+          const SkillIcon = skill.icon;
+          return (
+            <div key={i} className="marquee-pill" style={{ '--pill-accent': accent }}>
+              <SkillIcon size={18} className="marquee-pill-icon" />
+              <span className="marquee-pill-label">{skill.name}</span>
+            </div>
+          );
+        })}
+      </div>
+    </div>
   );
 }
 
-function CategorySection({ category }) {
+function CategoryRow({ category, index }) {
   const ref = useRef(null);
-  const inView = useInView(ref, { once: true, margin: '-50px' });
+  const inView = useInView(ref, { once: true, margin: '-40px' });
 
   return (
-    <div ref={ref} className="mb-10 last:mb-0">
-      <motion.div
-        initial={{ opacity: 0, x: -16 }}
-        animate={inView ? { opacity: 1, x: 0 } : {}}
-        transition={{ duration: 0.45 }}
-        className="flex items-center gap-3 mb-5"
-      >
-        <span className="skill-dash" style={{ background: category.accent }} />
+    <motion.div
+      ref={ref}
+      initial={{ opacity: 0, x: category.reverse ? 40 : -40 }}
+      animate={inView ? { opacity: 1, x: 0 } : {}}
+      transition={{ duration: 0.55, delay: index * 0.12 }}
+      className="mb-8 last:mb-0"
+    >
+      <div className="flex items-center gap-3 mb-4 px-1">
+        <span className="marquee-dash" style={{ background: category.accent }} />
         <span
           className="text-xs font-bold tracking-[0.22em] uppercase select-none"
           style={{ color: category.accent }}
         >
           {category.label}
         </span>
-      </motion.div>
-
-      <div className="skill-card-grid">
-        {category.skills.map((skill, i) => (
-          <SkillCard
-            key={skill.name}
-            skill={skill}
-            index={i}
-            accent={category.accent}
-            inView={inView}
-          />
-        ))}
       </div>
-    </div>
+      <MarqueeRow
+        skills={category.skills}
+        accent={category.accent}
+        reverse={category.reverse}
+      />
+    </motion.div>
   );
 }
 
@@ -126,7 +124,7 @@ export default function Skills() {
     <section id="skills" className="relative py-16 sm:py-24 lg:py-32 overflow-hidden">
       <div className="orb w-[500px] h-[500px] bg-violet-500/6 -left-48 top-1/3" />
       <div className="orb w-80 h-80 bg-cyan-500/5 right-0 bottom-1/4" />
-      <div className="orb w-60 h-60 bg-red-500/4 right-1/3 top-10" />
+      <div className="orb w-60 h-60 bg-blue-500/4 right-1/3 top-10" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-8 lg:px-12">
         <motion.div
@@ -134,7 +132,7 @@ export default function Skills() {
           initial={{ opacity: 0, y: 40 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.7 }}
-          className="text-center mb-10 sm:mb-14 lg:mb-18"
+          className="text-center mb-12 sm:mb-16"
         >
           <div className="section-tag inline-flex">
             <span className="text-violet-400">02</span> My Skills
@@ -153,8 +151,8 @@ export default function Skills() {
           transition={{ duration: 0.65, delay: 0.15 }}
           className="skills-panel"
         >
-          {skillCategories.map((category) => (
-            <CategorySection key={category.label} category={category} />
+          {skillCategories.map((category, i) => (
+            <CategoryRow key={category.label} category={category} index={i} />
           ))}
         </motion.div>
       </div>
