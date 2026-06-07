@@ -96,9 +96,9 @@ function CategoryRow({ category, index }) {
       initial={{ opacity: 0, x: category.reverse ? 40 : -40 }}
       animate={inView ? { opacity: 1, x: 0 } : {}}
       transition={{ duration: 0.55, delay: index * 0.12 }}
-      className="mb-8 last:mb-0"
+      className="mb-12 last:mb-0"
     >
-      <div className="flex items-center gap-3 mb-4 px-1">
+      <div className="flex items-center gap-3 mb-5 px-1">
         <span className="marquee-dash" style={{ background: category.accent }} />
         <span
           className="text-xs font-bold tracking-[0.22em] uppercase select-none"
