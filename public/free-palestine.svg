@@ -1,131 +1,246 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 560" width="400" height="560">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="800" height="450">
   <defs>
-    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" stop-color="#080814"/>
-      <stop offset="50%" stop-color="#0a1208"/>
-      <stop offset="100%" stop-color="#080814"/>
+    <!-- Dramatic sky -->
+    <linearGradient id="sky" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%"   stop-color="#0e0303"/>
+      <stop offset="25%"  stop-color="#3d0808"/>
+      <stop offset="55%"  stop-color="#7a1a0a"/>
+      <stop offset="80%"  stop-color="#b84010"/>
+      <stop offset="100%" stop-color="#5a2a08"/>
     </linearGradient>
-    <linearGradient id="flagFade" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0%" stop-color="#080814" stop-opacity="0"/>
-      <stop offset="100%" stop-color="#080814" stop-opacity="1"/>
+    <!-- Golden dome -->
+    <radialGradient id="domeGold" cx="38%" cy="25%" r="75%">
+      <stop offset="0%"   stop-color="#f0d060"/>
+      <stop offset="40%"  stop-color="#c8900c"/>
+      <stop offset="100%" stop-color="#7a5000"/>
+    </radialGradient>
+    <!-- Ground -->
+    <linearGradient id="ground" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%"   stop-color="#4a3010"/>
+      <stop offset="100%" stop-color="#1a0e04"/>
     </linearGradient>
-    <linearGradient id="wmHighlight" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" stop-color="rgba(255,255,255,0.12)"/>
-      <stop offset="100%" stop-color="rgba(255,255,255,0)"/>
-    </linearGradient>
-    <pattern id="keffiyeh" x="0" y="0" width="28" height="28" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
-      <rect width="28" height="28" fill="transparent"/>
-      <rect x="0" y="0" width="14" height="14" fill="rgba(206,17,38,0.04)"/>
-      <rect x="14" y="14" width="14" height="14" fill="rgba(206,17,38,0.04)"/>
-    </pattern>
-    <filter id="softGlow" x="-20%" y="-20%" width="140%" height="140%">
-      <feGaussianBlur stdDeviation="5" result="blur"/>
+    <!-- Fire glow -->
+    <radialGradient id="fireGlow" cx="50%" cy="100%" r="100%">
+      <stop offset="0%"   stop-color="#ff7700" stop-opacity="0.9"/>
+      <stop offset="60%"  stop-color="#cc2200" stop-opacity="0.5"/>
+      <stop offset="100%" stop-color="#880000" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="blur4">
+      <feGaussianBlur stdDeviation="4"/>
+    </filter>
+    <filter id="blur8">
+      <feGaussianBlur stdDeviation="8"/>
+    </filter>
+    <filter id="textShadow">
+      <feDropShadow dx="3" dy="3" stdDeviation="5" flood-color="rgba(0,0,0,0.95)"/>
+    </filter>
+    <filter id="textGlow">
+      <feGaussianBlur stdDeviation="6" result="blur"/>
       <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
     </filter>
-    <filter id="dropShadow">
-      <feDropShadow dx="0" dy="4" stdDeviation="8" flood-color="rgba(0,0,0,0.55)"/>
-    </filter>
-    <filter id="leafGlow">
-      <feDropShadow dx="0" dy="1" stdDeviation="2" flood-color="rgba(76,175,80,0.4)"/>
+    <filter id="domeGlow">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
     </filter>
   </defs>
 
-  <!-- Dark background -->
-  <rect width="400" height="560" fill="url(#bgGrad)"/>
-  <rect width="400" height="560" fill="url(#keffiyeh)"/>
+  <!-- ══ SKY ══ -->
+  <rect width="800" height="450" fill="url(#sky)"/>
 
-  <!-- ══════════ PALESTINIAN FLAG ══════════ -->
-  <!-- Black stripe -->
-  <rect x="0" y="0" width="400" height="87" fill="#1C1C1C"/>
-  <!-- White stripe -->
-  <rect x="0" y="87" width="400" height="87" fill="#F5F5F5"/>
-  <!-- Green stripe -->
-  <rect x="0" y="174" width="400" height="87" fill="#006B35"/>
-  <!-- Red triangle -->
-  <polygon points="0,0 158,130 0,261" fill="#C8102E"/>
+  <!-- Large smoke clouds -->
+  <ellipse cx="120"  cy="130" rx="170" ry="90"  fill="rgba(35,10,10,0.75)"/>
+  <ellipse cx="80"   cy="170" rx="130" ry="70"  fill="rgba(25,8,8,0.65)"/>
+  <ellipse cx="200"  cy="90"  rx="110" ry="60"  fill="rgba(40,12,12,0.6)"/>
+  <ellipse cx="680"  cy="110" rx="150" ry="85"  fill="rgba(35,10,10,0.75)"/>
+  <ellipse cx="730"  cy="155" rx="100" ry="65"  fill="rgba(28,8,8,0.65)"/>
+  <ellipse cx="600"  cy="80"  rx="100" ry="55"  fill="rgba(38,10,10,0.55)"/>
+  <!-- Center smoke plumes -->
+  <ellipse cx="310"  cy="75"  rx="70"  ry="45"  fill="rgba(45,14,14,0.5)"/>
+  <ellipse cx="510"  cy="90"  rx="80"  ry="50"  fill="rgba(40,12,12,0.5)"/>
 
-  <!-- Flag-to-dark fade -->
-  <rect x="0" y="230" width="400" height="65" fill="url(#flagFade)"/>
-
-  <!-- ══════════ DIVIDER + STARS ══════════ -->
-  <line x1="44" y1="285" x2="356" y2="285" stroke="rgba(255,255,255,0.12)" stroke-width="1"/>
-  <!-- Left star -->
-  <polygon points="52,278 55,269 58,278 67,278 60,284 63,293 55,287 47,293 50,284 43,278"
-    fill="rgba(255,255,255,0.25)"/>
-  <!-- Right star -->
-  <polygon points="348,278 351,269 354,278 363,278 356,284 359,293 351,287 343,293 346,284 339,278"
-    fill="rgba(255,255,255,0.25)"/>
-
-  <!-- ══════════ OLIVE BRANCHES ══════════ -->
-  <!-- Left branch (bottom-left to top-right) -->
-  <g filter="url(#leafGlow)">
-    <line x1="18" y1="378" x2="80" y2="296" stroke="#388E3C" stroke-width="2.5"/>
-    <ellipse cx="34" cy="362" rx="10" ry="5" fill="#4CAF50" transform="rotate(-52 34 362)"/>
-    <ellipse cx="30" cy="356" rx="9"  ry="4.5" fill="#2E7D32" transform="rotate(-52 30 356)"/>
-    <ellipse cx="48" cy="344" rx="10" ry="5" fill="#4CAF50" transform="rotate(-47 48 344)"/>
-    <ellipse cx="44" cy="338" rx="9"  ry="4.5" fill="#2E7D32" transform="rotate(-47 44 338)"/>
-    <ellipse cx="62" cy="326" rx="10" ry="5" fill="#4CAF50" transform="rotate(-42 62 326)"/>
-    <ellipse cx="58" cy="320" rx="9"  ry="4.5" fill="#2E7D32" transform="rotate(-42 58 320)"/>
-    <ellipse cx="74" cy="309" rx="9"  ry="4.5" fill="#4CAF50" transform="rotate(-38 74 309)"/>
-  </g>
-  <!-- Right branch (mirror) -->
-  <g filter="url(#leafGlow)">
-    <line x1="382" y1="378" x2="320" y2="296" stroke="#388E3C" stroke-width="2.5"/>
-    <ellipse cx="366" cy="362" rx="10" ry="5" fill="#4CAF50" transform="rotate(52 366 362)"/>
-    <ellipse cx="370" cy="356" rx="9"  ry="4.5" fill="#2E7D32" transform="rotate(52 370 356)"/>
-    <ellipse cx="352" cy="344" rx="10" ry="5" fill="#4CAF50" transform="rotate(47 352 344)"/>
-    <ellipse cx="356" cy="338" rx="9"  ry="4.5" fill="#2E7D32" transform="rotate(47 356 338)"/>
-    <ellipse cx="338" cy="326" rx="10" ry="5" fill="#4CAF50" transform="rotate(42 338 326)"/>
-    <ellipse cx="342" cy="320" rx="9"  ry="4.5" fill="#2E7D32" transform="rotate(42 342 320)"/>
-    <ellipse cx="326" cy="309" rx="9"  ry="4.5" fill="#4CAF50" transform="rotate(38 326 309)"/>
+  <!-- ══ BACKGROUND CITY SILHOUETTE ══ -->
+  <g fill="rgba(60,20,8,0.55)">
+    <!-- Left city blocks -->
+    <rect x="0"   y="340" width="38"  height="100"/>
+    <rect x="30"  y="318" width="28"  height="122"/>
+    <rect x="62"  y="348" width="22"  height="92"/>
+    <rect x="90"  y="330" width="26"  height="110"/>
+    <rect x="120" y="355" width="20"  height="85"/>
+    <rect x="148" y="338" width="24"  height="102"/>
+    <!-- Right city blocks -->
+    <rect x="640" y="342" width="24"  height="98"/>
+    <rect x="668" y="322" width="28"  height="118"/>
+    <rect x="700" y="350" width="22"  height="90"/>
+    <rect x="726" y="330" width="26"  height="110"/>
+    <rect x="756" y="348" width="22"  height="92"/>
+    <rect x="778" y="325" width="22"  height="115"/>
   </g>
 
-  <!-- ══════════ WATERMELON SLICE ══════════ -->
-  <!-- Center: (200,430), radius layers from outside in -->
-  <g filter="url(#dropShadow)">
-    <!-- Outermost dark-green rind -->
-    <path d="M 90 430 A 110 110 0 0 0 310 430 Z" fill="#1B5E20"/>
-    <!-- Mid rind -->
-    <path d="M 100 430 A 100 100 0 0 0 300 430 Z" fill="#2E7D32"/>
-    <!-- White rind layer -->
-    <path d="M 112 430 A 88 88 0 0 0 288 430 Z" fill="#E8F5E9"/>
-    <!-- Red flesh -->
-    <path d="M 122 430 A 78 78 0 0 0 278 430 Z" fill="#C62828"/>
-    <!-- Flesh highlight -->
-    <path d="M 122 430 A 78 78 0 0 0 278 430 Z" fill="url(#wmHighlight)" opacity="0.6"/>
+  <!-- ══ FIRE EXPLOSIONS ══ -->
+  <!-- Left fire glow -->
+  <ellipse cx="170" cy="395" rx="90"  ry="45" fill="rgba(255,80,0,0.55)" filter="url(#blur8)"/>
+  <ellipse cx="165" cy="385" rx="55"  ry="32" fill="rgba(255,120,0,0.65)" filter="url(#blur4)"/>
+  <!-- Left fire flames -->
+  <path d="M 110 430 Q 128 370 142 395 Q 148 355 168 378 Q 174 348 188 372 Q 200 345 210 385 Q 222 360 230 420"
+    fill="rgba(255,110,0,0.75)"/>
+  <path d="M 120 430 Q 135 380 148 400 Q 155 368 170 388 Q 180 360 192 382"
+    fill="rgba(255,160,0,0.5)"/>
+
+  <!-- Right fire -->
+  <ellipse cx="648" cy="375" rx="70"  ry="38" fill="rgba(255,60,0,0.5)" filter="url(#blur8)"/>
+  <ellipse cx="652" cy="365" rx="42"  ry="26" fill="rgba(255,100,0,0.6)" filter="url(#blur4)"/>
+  <path d="M 610 410 Q 624 362 636 382 Q 642 348 658 368 Q 666 342 678 374 Q 688 352 698 404"
+    fill="rgba(255,90,0,0.7)"/>
+
+  <!-- Communication tower left background -->
+  <g stroke="rgba(90,35,10,0.7)" stroke-width="2" fill="none">
+    <line x1="248" y1="195" x2="248" y2="355"/>
+    <line x1="242" y1="238" x2="254" y2="238"/>
+    <line x1="240" y1="258" x2="256" y2="258"/>
+    <line x1="237" y1="280" x2="259" y2="280"/>
+    <line x1="244" y1="300" x2="252" y2="300"/>
   </g>
 
-  <!-- Watermelon seeds -->
-  <g fill="#0e0e0e" filter="url(#dropShadow)">
-    <ellipse cx="150" cy="410" rx="5.5" ry="8.5" transform="rotate(-22 150 410)"/>
-    <ellipse cx="178" cy="395" rx="5.5" ry="8.5" transform="rotate(-10 178 395)"/>
-    <ellipse cx="200" cy="390" rx="5.5" ry="8.5"/>
-    <ellipse cx="222" cy="395" rx="5.5" ry="8.5" transform="rotate(10 222 395)"/>
-    <ellipse cx="250" cy="410" rx="5.5" ry="8.5" transform="rotate(22 250 410)"/>
+  <!-- ══ GROUND ══ -->
+  <rect x="0" y="375" width="800" height="75" fill="url(#ground)"/>
+  <!-- Ground crack/texture lines -->
+  <line x1="300" y1="380" x2="500" y2="380" stroke="rgba(0,0,0,0.3)" stroke-width="1"/>
+  <line x1="200" y1="400" x2="600" y2="400" stroke="rgba(0,0,0,0.2)" stroke-width="1"/>
+
+  <!-- ══ DOME OF THE ROCK ══ -->
+  <!-- Outer platform/esplanade -->
+  <rect x="240" y="308" width="320" height="70" rx="3" fill="#c4a878"/>
+
+  <!-- Blue tile cladding on lower walls -->
+  <rect x="243" y="338" width="314" height="42" rx="2" fill="#4a7fb5" opacity="0.88"/>
+  <!-- Tile grid pattern on blue section -->
+  <g stroke="rgba(255,255,255,0.12)" stroke-width="0.8">
+    <line x1="243" y1="348" x2="557" y2="348"/>
+    <line x1="243" y1="358" x2="557" y2="358"/>
+    <line x1="243" y1="368" x2="557" y2="368"/>
+    <line x1="278" y1="338" x2="278" y2="380"/>
+    <line x1="313" y1="338" x2="313" y2="380"/>
+    <line x1="348" y1="338" x2="348" y2="380"/>
+    <line x1="383" y1="338" x2="383" y2="380"/>
+    <line x1="418" y1="338" x2="418" y2="380"/>
+    <line x1="453" y1="338" x2="453" y2="380"/>
+    <line x1="488" y1="338" x2="488" y2="380"/>
+    <line x1="523" y1="338" x2="523" y2="380"/>
   </g>
 
-  <!-- ══════════ FREE TEXT ══════════ -->
-  <!-- Glow layer -->
-  <text x="200" y="490" text-anchor="middle"
+  <!-- Stone upper wall -->
+  <rect x="260" y="308" width="280" height="33" fill="#d4bc96"/>
+  <!-- Arched windows on upper wall -->
+  <g fill="rgba(40,18,5,0.45)">
+    <path d="M 282 338 L 282 322 Q 289.5 315 297 322 L 297 338 Z"/>
+    <path d="M 312 338 L 312 322 Q 319.5 315 327 322 L 327 338 Z"/>
+    <path d="M 342 338 L 342 322 Q 349.5 315 357 322 L 357 338 Z"/>
+    <path d="M 372 338 L 372 322 Q 379.5 315 387 322 L 387 338 Z"/>
+    <path d="M 402 338 L 402 322 Q 409.5 315 417 322 L 417 338 Z"/>
+    <path d="M 432 338 L 432 322 Q 439.5 315 447 322 L 447 338 Z"/>
+    <path d="M 462 338 L 462 322 Q 469.5 315 477 322 L 477 338 Z"/>
+    <path d="M 492 338 L 492 322 Q 499.5 315 507 322 L 507 338 Z"/>
+  </g>
+
+  <!-- Octagonal drum body -->
+  <polygon points="338,308 462,308 484,278 484,248 462,220 338,220 316,248 316,278"
+    fill="#d4bc96"/>
+  <!-- Blue tile on octagonal drum -->
+  <polygon points="341,305 459,305 480,277 480,251 459,222 341,222 320,251 320,277"
+    fill="#4a7fb5" opacity="0.88"/>
+  <!-- Drum tile grid -->
+  <g stroke="rgba(255,255,255,0.1)" stroke-width="0.7">
+    <line x1="320" y1="265" x2="480" y2="265"/>
+    <line x1="320" y1="278" x2="480" y2="278"/>
+    <line x1="350" y1="222" x2="350" y2="305"/>
+    <line x1="380" y1="222" x2="380" y2="305"/>
+    <line x1="400" y1="222" x2="400" y2="305"/>
+    <line x1="420" y1="222" x2="420" y2="305"/>
+    <line x1="450" y1="222" x2="450" y2="305"/>
+  </g>
+  <!-- Drum arched windows -->
+  <g fill="rgba(30,12,3,0.5)">
+    <path d="M 348 280 L 348 258 Q 357 249 366 258 L 366 280 Z"/>
+    <path d="M 377 280 L 377 258 Q 386 249 395 258 L 395 280 Z"/>
+    <path d="M 405 280 L 405 258 Q 414 249 423 258 L 423 280 Z"/>
+    <path d="M 434 280 L 434 258 Q 443 249 452 258 L 452 280 Z"/>
+  </g>
+
+  <!-- White decorative band on drum top -->
+  <rect x="316" y="218" width="168" height="8" rx="2" fill="rgba(255,255,255,0.35)"/>
+
+  <!-- ══ GOLDEN DOME ══ -->
+  <!-- Dome shadow/base ellipse -->
+  <ellipse cx="400" cy="220" rx="94" ry="16" fill="rgba(100,60,0,0.6)"/>
+  <!-- Main dome shape -->
+  <path d="M 308 220 Q 308 108 400 72 Q 492 108 492 220 Z" fill="url(#domeGold)" filter="url(#domeGlow)"/>
+  <!-- Dome highlight reflection -->
+  <path d="M 338 212 Q 355 118 400 80 Q 378 130 368 210 Z" fill="rgba(255,240,180,0.18)"/>
+  <path d="M 360 216 Q 368 130 400 80 Q 388 140 382 215 Z" fill="rgba(255,250,200,0.1)"/>
+  <!-- Dome bottom ridge/base ring -->
+  <ellipse cx="400" cy="220" rx="92" ry="11" fill="#c88c08"/>
+  <ellipse cx="400" cy="220" rx="88" ry="9"  fill="#d4a010"/>
+
+  <!-- Finial pole -->
+  <line x1="400" y1="72" x2="400" y2="42" stroke="#c8900c" stroke-width="3.5"/>
+  <!-- Finial ball -->
+  <circle cx="400" cy="40" r="5.5" fill="#e8c840"/>
+  <!-- Crescent moon -->
+  <path d="M 396 34 Q 412 20 418 28 Q 406 22 400 32 Z" fill="#e8c840"/>
+  <path d="M 395 34 Q 395 24 402 22 Q 397 26 396 34 Z" fill="#e8c840" opacity="0.6"/>
+
+  <!-- ══ AMBIENT GLOW AROUND DOME ══ -->
+  <ellipse cx="400" cy="150" rx="110" ry="100" fill="rgba(200,140,20,0.07)" filter="url(#blur8)"/>
+
+  <!-- ══ BIRDS (silhouettes) ══ -->
+  <g fill="rgba(0,0,0,0.55)">
+    <path d="M 636 62 Q 642 56 648 62 Q 642 59 636 62"/>
+    <path d="M 650 62 Q 656 56 662 62 Q 656 59 650 62"/>
+  </g>
+  <g fill="rgba(0,0,0,0.4)" transform="translate(18,-8) scale(0.75)">
+    <path d="M 636 62 Q 642 56 648 62 Q 642 59 636 62"/>
+    <path d="M 650 62 Q 656 56 662 62 Q 656 59 650 62"/>
+  </g>
+
+  <!-- ══ ARABIC TEXT (bold dramatic, top-left like the reference) ══ -->
+  <!-- Shadow layer -->
+  <text x="34" y="155"
+    font-family="'Arial Black','Arial Bold',Arial,sans-serif"
+    font-size="62" font-weight="900" fill="rgba(0,0,0,0.9)"
+    filter="url(#blur4)">&#x623;&#x64A;&#x646; &#x623;&#x646;&#x62A;&#x645;</text>
+  <!-- Main white text -->
+  <text x="34" y="155"
+    font-family="'Arial Black','Arial Bold',Arial,sans-serif"
+    font-size="62" font-weight="900" fill="white"
+    filter="url(#textShadow)">&#x623;&#x64A;&#x646; &#x623;&#x646;&#x62A;&#x645;</text>
+
+  <!-- Shadow layer line 2 -->
+  <text x="34" y="228"
+    font-family="'Arial Black','Arial Bold',Arial,sans-serif"
+    font-size="56" font-weight="900" fill="rgba(0,0,0,0.9)"
+    filter="url(#blur4)">&#x64A;&#x627; &#x639;&#x631;&#x628; &#x61F;</text>
+  <!-- Main white text line 2 -->
+  <text x="34" y="228"
+    font-family="'Arial Black','Arial Bold',Arial,sans-serif"
+    font-size="56" font-weight="900" fill="white"
+    filter="url(#textShadow)">&#x64A;&#x627; &#x639;&#x631;&#x628; &#x61F;</text>
+
+  <!-- ══ FREE PALESTINE BOTTOM ══ -->
+  <!-- Glow -->
+  <text x="400" y="430" text-anchor="middle"
     font-family="'Arial Black',Impact,Arial,sans-serif"
-    font-size="60" font-weight="900" fill="#C8102E" opacity="0.22"
-    filter="url(#softGlow)" letter-spacing="5">FREE</text>
-  <!-- Main white FREE -->
-  <text x="200" y="490" text-anchor="middle"
+    font-size="38" font-weight="900" fill="white" opacity="0.18"
+    filter="url(#blur8)" letter-spacing="4">FREE PALESTINE</text>
+  <!-- Solid text -->
+  <text x="400" y="430" text-anchor="middle"
     font-family="'Arial Black',Impact,Arial,sans-serif"
-    font-size="60" font-weight="900" fill="#FFFFFF" letter-spacing="5">FREE</text>
+    font-size="38" font-weight="900" fill="white"
+    filter="url(#textShadow)" letter-spacing="4">FREE PALESTINE</text>
 
-  <!-- PALESTINE text -->
-  <text x="200" y="530" text-anchor="middle"
-    font-family="'Arial Black',Impact,Arial,sans-serif"
-    font-size="25" font-weight="900" fill="#C8102E" letter-spacing="8">PALESTINE</text>
-
-  <!-- Green accent lines -->
-  <line x1="38" y1="541" x2="148" y2="541" stroke="#006B35" stroke-width="1.5" opacity="0.75"/>
-  <line x1="252" y1="541" x2="362" y2="541" stroke="#006B35" stroke-width="1.5" opacity="0.75"/>
-
-  <!-- Arabic text: فلسطين حرة -->
-  <text x="200" y="557" text-anchor="middle"
-    font-family="Arial,sans-serif" font-size="13"
-    fill="rgba(255,255,255,0.38)" letter-spacing="2">&#x641;&#x644;&#x633;&#x637;&#x64A;&#x646; &#x62D;&#x631;&#x629;</text>
+  <!-- ══ PALESTINIAN FLAG STRIPE (bottom border) ══ -->
+  <rect x="0" y="435" width="800" height="5"  fill="#1C1C1C" opacity="0.9"/>
+  <rect x="0" y="440" width="800" height="5"  fill="#F5F5F5" opacity="0.9"/>
+  <rect x="0" y="445" width="800" height="5"  fill="#006B35" opacity="0.9"/>
+  <!-- Red triangle on flag stripe -->
+  <polygon points="0,435 22,442 0,450" fill="#C8102E" opacity="0.9"/>
 </svg>
