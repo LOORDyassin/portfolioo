@@ -1,6 +1,8 @@
 import { useRef, useState } from 'react';
 import { motion, useInView, AnimatePresence } from 'framer-motion';
-import { FaGithub, FaExternalLinkAlt } from 'react-icons/fa';
+import { FaGithub, FaExternalLinkAlt, FaImage } from 'react-icons/fa';
+
+const linkIconMap = { FaGithub, FaImage };
 import { portfolioData } from '../data/portfolio';
 
 export default function Projects() {
@@ -116,7 +118,7 @@ export default function Projects() {
                       rel="noopener noreferrer"
                       className="w-8 h-8 bg-black/60 rounded-lg flex items-center justify-center text-white hover:bg-violet-600 transition-colors"
                     >
-                      <FaGithub size={14} />
+                      {(() => { const I = linkIconMap[project.linkIcon] || FaGithub; return <I size={14} />; })()}
                     </a>
                     {project.live !== '#' && (
                       <a

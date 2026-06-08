@@ -111,6 +111,7 @@ export const portfolioData = {
       tags: ["Photoshop", "Digital Art", "Illustration", "Activism"],
       image: "https://i.postimg.cc/P5pCcBnf/final.png",
       link: "https://postimg.cc/68K64bQF",
+      linkIcon: "FaImage",
       live: "#",
       featured: false,
       gradient: "from-amber-500 to-orange-600",
