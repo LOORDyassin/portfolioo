@@ -112,6 +112,7 @@ export default function Projects() {
 
                   {/* Links overlay — always visible on touch, hover-only on pointer devices */}
                   <div className="absolute top-3 right-3 z-30 flex gap-2 project-links transition-opacity">
+                    {!project.hideLink && (
                     <a
                       href={project.link}
                       target="_blank"
@@ -120,6 +121,7 @@ export default function Projects() {
                     >
                       {(() => { const I = linkIconMap[project.linkIcon] || FaGithub; return <I size={14} />; })()}
                     </a>
+                    )}
                     {project.live !== '#' && (
                       <a
                         href={project.live}

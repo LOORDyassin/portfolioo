@@ -136,6 +136,7 @@ export const portfolioData = {
       link: "https://github.com/LOORDyassin",
       live: "#",
       featured: false,
+      hideLink: true,
       gradient: "from-violet-700 to-purple-900",
     },
   ],
