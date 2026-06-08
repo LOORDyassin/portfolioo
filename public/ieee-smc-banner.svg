@@ -1,0 +1,114 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="800" height="450">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#050d1f"/>
+      <stop offset="100%" style="stop-color:#0a1a3a"/>
+    </linearGradient>
+    <linearGradient id="ieeeBlue" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#0073e6"/>
+      <stop offset="100%" style="stop-color:#00b4d8"/>
+    </linearGradient>
+    <linearGradient id="glowLine" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#0073e6;stop-opacity:0"/>
+      <stop offset="50%" style="stop-color:#00b4d8;stop-opacity:1"/>
+      <stop offset="100%" style="stop-color:#0073e6;stop-opacity:0"/>
+    </linearGradient>
+    <radialGradient id="centerGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" style="stop-color:#0073e6;stop-opacity:0.18"/>
+      <stop offset="100%" style="stop-color:#0073e6;stop-opacity:0"/>
+    </radialGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="softGlow">
+      <feGaussianBlur stdDeviation="6" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <rect width="800" height="450" fill="url(#bg)"/>
+  <rect width="800" height="450" fill="url(#centerGlow)"/>
+
+  <!-- Grid -->
+  <g opacity="0.06" stroke="#00b4d8" stroke-width="0.8">
+    <line x1="0" y1="75" x2="800" y2="75"/><line x1="0" y1="150" x2="800" y2="150"/>
+    <line x1="0" y1="225" x2="800" y2="225"/><line x1="0" y1="300" x2="800" y2="300"/>
+    <line x1="0" y1="375" x2="800" y2="375"/>
+    <line x1="100" y1="0" x2="100" y2="450"/><line x1="200" y1="0" x2="200" y2="450"/>
+    <line x1="300" y1="0" x2="300" y2="450"/><line x1="400" y1="0" x2="400" y2="450"/>
+    <line x1="500" y1="0" x2="500" y2="450"/><line x1="600" y1="0" x2="600" y2="450"/>
+    <line x1="700" y1="0" x2="700" y2="450"/>
+  </g>
+
+  <!-- Circuit traces left -->
+  <g stroke="#0073e6" stroke-width="1.5" fill="none" opacity="0.4">
+    <polyline points="40,80 80,80 80,130 130,130"/>
+    <polyline points="40,200 100,200 100,160 160,160"/>
+    <polyline points="20,320 60,320 60,280 120,280 120,310 170,310"/>
+  </g>
+  <g fill="#00b4d8" opacity="0.55">
+    <circle cx="80" cy="80" r="3"/><circle cx="130" cy="130" r="3"/>
+    <circle cx="100" cy="200" r="3"/><circle cx="160" cy="160" r="3"/>
+    <circle cx="60" cy="320" r="3"/><circle cx="120" cy="280" r="3"/>
+  </g>
+
+  <!-- Circuit traces right -->
+  <g stroke="#0073e6" stroke-width="1.5" fill="none" opacity="0.4">
+    <polyline points="760,90 720,90 720,140 660,140"/>
+    <polyline points="780,210 730,210 730,170 670,170"/>
+    <polyline points="770,330 740,330 740,290 680,290 680,320 630,320"/>
+  </g>
+  <g fill="#00b4d8" opacity="0.55">
+    <circle cx="720" cy="90" r="3"/><circle cx="660" cy="140" r="3"/>
+    <circle cx="730" cy="210" r="3"/><circle cx="670" cy="170" r="3"/>
+    <circle cx="740" cy="330" r="3"/><circle cx="680" cy="290" r="3"/>
+  </g>
+
+  <!-- Center glow -->
+  <circle cx="400" cy="195" r="130" fill="#0073e6" opacity="0.07"/>
+
+  <!-- IEEE diamond icon -->
+  <g filter="url(#softGlow)">
+    <polygon points="400,75 442,128 400,181 358,128" fill="none" stroke="url(#ieeeBlue)" stroke-width="2.5"/>
+    <circle cx="400" cy="128" r="24" fill="none" stroke="url(#ieeeBlue)" stroke-width="2"/>
+    <circle cx="400" cy="128" r="7" fill="#00b4d8"/>
+    <line x1="400" y1="97" x2="400" y2="106" stroke="#00b4d8" stroke-width="2"/>
+    <line x1="400" y1="150" x2="400" y2="159" stroke="#00b4d8" stroke-width="2"/>
+    <line x1="369" y1="128" x2="378" y2="128" stroke="#00b4d8" stroke-width="2"/>
+    <line x1="422" y1="128" x2="431" y2="128" stroke="#00b4d8" stroke-width="2"/>
+  </g>
+
+  <!-- IEEE text -->
+  <text x="400" y="218" text-anchor="middle" font-family="Arial Black, sans-serif" font-weight="900" font-size="44" fill="url(#ieeeBlue)" filter="url(#glow)" letter-spacing="10">IEEE</text>
+
+  <!-- Divider -->
+  <rect x="255" y="230" width="290" height="2" fill="url(#glowLine)" rx="1"/>
+
+  <!-- Subtitle -->
+  <text x="400" y="268" text-anchor="middle" font-family="Arial, sans-serif" font-weight="700" font-size="17" fill="#ddeeff" letter-spacing="3">SYSTEMS, MAN &amp; CYBERNETICS</text>
+  <text x="400" y="298" text-anchor="middle" font-family="Arial, sans-serif" font-weight="400" font-size="12" fill="#6aaacf" letter-spacing="2.5">INTERNATIONAL CONFERENCE</text>
+
+  <!-- Badge -->
+  <rect x="305" y="320" width="190" height="40" rx="20" fill="#0073e6" fill-opacity="0.15" stroke="#00b4d8" stroke-width="1" stroke-opacity="0.5"/>
+  <text x="400" y="346" text-anchor="middle" font-family="Arial Black, sans-serif" font-weight="900" font-size="20" fill="#00b4d8" filter="url(#glow)" letter-spacing="4">SMC 2026</text>
+
+  <!-- Location -->
+  <text x="400" y="400" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#3a7a9e" letter-spacing="2">ISIMS SFAX — TUNISIA</text>
+
+  <!-- Corner brackets -->
+  <g stroke="#0073e6" stroke-width="1.5" fill="none" opacity="0.45">
+    <polyline points="20,20 20,48 48,48"/>
+    <polyline points="780,20 780,48 752,48"/>
+    <polyline points="20,430 20,402 48,402"/>
+    <polyline points="780,430 780,402 752,402"/>
+  </g>
+
+  <!-- Particles -->
+  <g fill="#00b4d8" opacity="0.4">
+    <circle cx="240" cy="150" r="1.5"/><circle cx="560" cy="150" r="1.5"/>
+    <circle cx="210" cy="290" r="1.5"/><circle cx="590" cy="290" r="1.5"/>
+    <circle cx="350" cy="38"  r="1.2"/><circle cx="450" cy="38"  r="1.2"/>
+    <circle cx="320" cy="425" r="1.2"/><circle cx="480" cy="425" r="1.2"/>
+  </g>
+</svg>

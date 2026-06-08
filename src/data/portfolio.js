@@ -117,6 +117,17 @@ export const portfolioData = {
       gradient: "from-amber-500 to-orange-600",
     },
     {
+      id: 6,
+      title: "IEEE SMC ISIMS 2026 — Conference Website",
+      description: "Official website for the IEEE Systems, Man, and Cybernetics (SMC) international conference hosted at ISIMS Sfax, Tunisia. Built to present the program, speakers, and registration with a clean, responsive experience that meets international IEEE standards.",
+      tags: ["React", "Web Dev", "IEEE", "Conference"],
+      image: `${import.meta.env.BASE_URL}ieee-smc-banner.svg`,
+      link: "https://github.com/LOORDyassin/smc2026",
+      live: "https://smc-isims.ieee.tn/",
+      featured: true,
+      gradient: "from-blue-700 to-cyan-600",
+    },
+    {
       id: 5,
       title: "8 Ball Pool Gaming Platform",
       description: "Dedicated gaming service platform with coaching resources, account management, and community features.",
