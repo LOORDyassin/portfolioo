@@ -29,7 +29,7 @@ export default function Contact() {
           subject: form.subject || 'Portfolio Contact',
           message: form.message,
         },
-        import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+        { publicKey: import.meta.env.VITE_EMAILJS_PUBLIC_KEY }
       );
       setSent(true);
       setForm({ name: '', email: '', subject: '', message: '' });
