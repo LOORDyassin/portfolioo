@@ -1,10 +1,10 @@
-export const portfolioData = {
+﻿export const portfolioData = {
   personal: {
     name: "Yassine Souissi",
     brand: "LOORD.Y!",
     tagline: "Product Designer & Digital Creative Director",
     subtitle: "Crafting digital experiences that leave a mark.",
-    bio: "I'm a 19-year-old digital creative from Tunisia, studying Media Sciences at the 'Al-Fadil Bin Ashour' Institute. I blend design thinking with technical execution to build products people actually love using.",
+    bio: "I'm a 20-year-old digital creative from Tunisia, studying Computer Science & Big Data at ISIMS Sfax. I blend design thinking with technical execution to build products people actually love using.",
     bioExtended: "From pixel-perfect UI/UX designs to production-ready websites, I bring ideas to life with precision and style. When I'm not designing or coding, you'll find me swimming or deep in a gaming session.",
     email: "yassinesouissi619@gmail.com",
     location: "Tunisia",

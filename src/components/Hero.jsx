@@ -1,4 +1,4 @@
-import { motion } from 'framer-motion';
+﻿import { motion } from 'framer-motion';
 import { FaGithub, FaLinkedin, FaInstagram, FaFacebook, FaArrowDown } from 'react-icons/fa';
 import { portfolioData } from '../data/portfolio';
 
@@ -50,7 +50,7 @@ export default function Hero() {
               transition={{ delay: 0.4 }}
               className="text-slate-400 text-base sm:text-lg leading-relaxed mt-6 max-w-lg"
             >
-              I'm a 19-year-old digital creative from Tunisia — I design{' '}
+              I'm a 20-year-old digital creative from Tunisia — I design{' '}
               <span className="text-violet-400 font-medium">brands that stand out</span>,
               build{' '}
               <span className="text-cyan-400 font-medium">web platforms that perform</span>,
