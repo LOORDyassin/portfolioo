@@ -50,13 +50,13 @@ export default function Hero() {
               transition={{ delay: 0.4 }}
               className="text-slate-400 text-base sm:text-lg leading-relaxed mt-6 max-w-lg"
             >
-              I'm a 19-year-old digital creative from Tunisia — I design{' '}
-              <span className="text-violet-400 font-medium">brands that stand out</span>,
+              I design{' '}
+              <span className="text-violet-400 font-medium">brands</span>,
               build{' '}
-              <span className="text-cyan-400 font-medium">web platforms that perform</span>,
-              and produce{' '}
-              <span className="text-emerald-400 font-medium">video content that captivates</span>.
-              {' '}From the first sketch to the final pixel, I deliver complete digital experiences with precision and style.
+              <span className="text-cyan-400 font-medium">web experiences</span>,
+              and craft{' '}
+              <span className="text-emerald-400 font-medium">video content</span>{' '}
+              — delivering complete digital solutions from concept to launch, with precision and style.
             </motion.p>
 
             <motion.div
@@ -93,20 +93,19 @@ export default function Hero() {
                   return (
                     <motion.a
                       key={s.name}
-                      href={`${import.meta.env.BASE_URL}free-palestine.svg`}
+                      href={personal.photo2}
                       target="_blank"
                       rel="noopener noreferrer"
-                      whileHover={{ scale: 1.15, y: -3 }}
+                      whileHover={{ scale: 1.2, y: -3 }}
                       whileTap={{ scale: 0.9 }}
-                      title="Free Palestine 🇵🇸"
-                      className="w-10 h-10 rounded-full overflow-hidden flex-shrink-0"
-                      style={{ border: '2px solid rgba(200,16,46,0.6)', boxShadow: '0 0 10px rgba(200,16,46,0.3)' }}
+                      className="w-10 h-10 rounded-full overflow-hidden"
+                      style={{ border: '2px solid rgba(139,92,246,0.5)' }}
+                      title="View photo"
                     >
                       <img
-                        src={`${import.meta.env.BASE_URL}free-palestine.svg`}
-                        alt="Free Palestine"
-                        className="w-full h-full object-cover"
-                        style={{ objectPosition: '60% 50%' }}
+                        src={personal.photo2}
+                        alt={personal.name}
+                        className="w-full h-full object-cover object-top"
                       />
                     </motion.a>
                   );
