@@ -4,7 +4,7 @@ const KEY = 'loord-theme-v2';
 
 export function useTheme() {
   const [theme, setTheme] = useState(
-    () => localStorage.getItem(KEY) || 'light'
+    () => localStorage.getItem(KEY) || 'dark'
   );
 
   useEffect(() => {
