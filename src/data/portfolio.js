@@ -120,7 +120,7 @@ export const portfolioData = {
       id: 6,
       title: "IEEE SMC ISIMS 2026 — Conference Website",
       description: "Official website for the IEEE Systems, Man, and Cybernetics (SMC) international conference hosted at ISIMS Sfax, Tunisia. Built to present the program, speakers, and registration with a clean, responsive experience that meets international IEEE standards.",
-      tags: ["React", "Web Dev", "IEEE", "Conference"],
+      tags: ["React", "TypeScript", "Web Dev", "IEEE", "Conference"],
       image: `${import.meta.env.BASE_URL}ieee-smc-banner.svg`,
       link: "https://github.com/LOORDyassin/smc2026",
       live: "https://smc-isims.ieee.tn/",
