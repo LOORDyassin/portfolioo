@@ -142,10 +142,14 @@ export default function Hero() {
                 style={{ border: '2px solid rgba(124, 58, 237, 0.4)' }}
               >
                 <img
-                  src={`${import.meta.env.BASE_URL}free-palestine.svg`}
-                  alt="Free Palestine — فلسطين حرة"
-                  className="w-full h-full object-contain"
-                  style={{ background: '#080814' }}
+                  src={personal.photo1}
+                  alt={personal.name}
+                  className="w-full h-full object-cover object-top"
+                  onError={(e) => {
+                    e.target.style.display = 'none';
+                    e.target.parentElement.style.background = 'linear-gradient(135deg, #1e1b4b, #0c4a6e)';
+                    e.target.parentElement.innerHTML += `<div style="display:flex;align-items:center;justify-content:center;height:100%;font-size:80px;">👤</div>`;
+                  }}
                 />
               </div>
 
