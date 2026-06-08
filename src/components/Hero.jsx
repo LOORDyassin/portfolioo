@@ -115,21 +115,12 @@ export default function Hero() {
           >
             {/* Photo frame — badges are siblings of the photo, never inside overflow-hidden */}
             <div className="relative w-full max-w-xs sm:w-80 lg:w-96">
-              <div className="absolute inset-0 rounded-3xl glow-purple" />
-              <div className="w-full rounded-3xl overflow-hidden"
-                style={{ border: '2px solid rgba(124, 58, 237, 0.4)' }}
-              >
-                <img
-                  src={personal.photo1}
-                  alt={personal.name}
-                  className="w-full h-auto block"
-                  onError={(e) => {
-                    e.target.style.display = 'none';
-                    e.target.parentElement.style.background = 'linear-gradient(135deg, #1e1b4b, #0c4a6e)';
-                    e.target.parentElement.innerHTML += `<div style="display:flex;align-items:center;justify-content:center;height:100%;font-size:80px;">👤</div>`;
-                  }}
-                />
-              </div>
+              <img
+                src={personal.photo1}
+                alt={personal.name}
+                className="w-full h-auto block rounded-3xl relative z-10"
+                style={{ border: '2px solid rgba(124, 58, 237, 0.4)', boxShadow: '0 0 40px rgba(124,58,237,0.25)' }}
+              />
 
               {/* Floating badge — right side */}
               <motion.div
