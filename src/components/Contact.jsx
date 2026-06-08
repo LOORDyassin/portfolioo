@@ -1,10 +1,27 @@
 import { useRef, useState } from 'react';
 import { motion, useInView } from 'framer-motion';
-import { FaEnvelope, FaMapMarkerAlt, FaGithub, FaLinkedin, FaInstagram, FaFacebook, FaPaperPlane } from 'react-icons/fa';
+import { FaEnvelope, FaMapMarkerAlt, FaGithub, FaLinkedin, FaInstagram, FaFacebook, FaPaperPlane, FaUser, FaTag, FaCommentDots } from 'react-icons/fa';
 import emailjs from '@emailjs/browser';
 import { portfolioData } from '../data/portfolio';
 
 const iconMap = { FaGithub, FaLinkedin, FaInstagram, FaFacebook };
+
+const inputBase = {
+  background: 'rgba(255,255,255,0.04)',
+  border: '1px solid rgba(255,255,255,0.1)',
+};
+
+function Field({ icon: Icon, label, children }) {
+  return (
+    <div className="flex flex-col gap-1.5">
+      <label className="text-slate-400 text-xs font-medium tracking-wide uppercase flex items-center gap-2">
+        <Icon size={11} className="text-violet-400" />
+        {label}
+      </label>
+      {children}
+    </div>
+  );
+}
 
 export default function Contact() {
   const { personal, social } = portfolioData;
@@ -14,6 +31,8 @@ export default function Contact() {
   const [sent, setSent] = useState(false);
   const [sending, setSending] = useState(false);
   const [error, setError] = useState('');
+
+  const set = (key) => (e) => setForm((f) => ({ ...f, [key]: e.target.value }));
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -33,7 +52,7 @@ export default function Contact() {
       );
       setSent(true);
       setForm({ name: '', email: '', subject: '', message: '' });
-      setTimeout(() => setSent(false), 4000);
+      setTimeout(() => setSent(false), 5000);
     } catch (err) {
       console.error('EmailJS error:', err);
       const msg = err?.text || err?.message || JSON.stringify(err);
@@ -77,18 +96,12 @@ export default function Contact() {
           >
             <div className="glass-card rounded-3xl p-6 sm:p-8 lg:p-12">
               <h3 className="heading-font text-xl font-bold text-white mb-6">Get in Touch</h3>
-
               <div className="space-y-5">
                 {[
                   { icon: FaEnvelope, label: 'Email', value: personal.email, href: `mailto:${personal.email}` },
                   { icon: FaMapMarkerAlt, label: 'Location', value: personal.location, href: '#' },
                 ].map(({ icon: Icon, label, value, href }) => (
-                  <a
-                    key={label}
-                    href={href}
-                    className="flex items-center gap-4 text-decoration-none group"
-                    style={{ textDecoration: 'none' }}
-                  >
+                  <a key={label} href={href} className="flex items-center gap-4 group" style={{ textDecoration: 'none' }}>
                     <div className="w-12 h-12 rounded-2xl bg-violet-500/10 flex items-center justify-center group-hover:bg-violet-500/20 transition-colors flex-shrink-0">
                       <Icon className="text-violet-400" size={18} />
                     </div>
@@ -99,28 +112,21 @@ export default function Contact() {
                   </a>
                 ))}
               </div>
-
-              {/* Availability */}
               <div className="mt-6 sm:mt-8 p-4 sm:p-5 rounded-2xl flex items-center gap-3 flex-wrap"
-                style={{ background: 'rgba(16, 185, 129, 0.08)', border: '1px solid rgba(16, 185, 129, 0.2)' }}
+                style={{ background: 'rgba(16,185,129,0.08)', border: '1px solid rgba(16,185,129,0.2)' }}
               >
                 <span className="w-3 h-3 rounded-full bg-emerald-400 animate-pulse" />
                 <span className="text-emerald-400 text-sm font-medium">Currently available for new projects</span>
               </div>
             </div>
 
-            {/* Social */}
             <div className="glass-card rounded-3xl p-6 sm:p-8 lg:p-10">
               <p className="text-slate-500 text-sm mb-4">Find me on</p>
               <div className="grid grid-cols-2 gap-3">
                 {social.map((s) => {
                   const Icon = iconMap[s.icon];
                   return (
-                    <a
-                      key={s.name}
-                      href={s.url}
-                      target="_blank"
-                      rel="noopener noreferrer"
+                    <a key={s.name} href={s.url} target="_blank" rel="noopener noreferrer"
                       className="flex items-center gap-3 p-4 rounded-xl hover:bg-white/5 transition-colors group"
                       style={{ textDecoration: 'none' }}
                     >
@@ -140,62 +146,82 @@ export default function Contact() {
             initial={{ opacity: 0, x: 40 }}
             animate={inView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.7, delay: 0.3 }}
-            className="glass-card rounded-3xl p-6 sm:p-8 lg:p-12"
+            className="glass-card rounded-3xl p-6 sm:p-8 lg:p-10"
           >
-            <h3 className="heading-font text-xl font-bold text-white mb-6">Send a Message</h3>
+            <div className="mb-7">
+              <h3 className="heading-font text-2xl font-bold text-white">Send a Message</h3>
+              <p className="text-slate-500 text-sm mt-1">I'll get back to you within 24 hours.</p>
+            </div>
+
             <form onSubmit={handleSubmit} className="space-y-5">
               <div className="grid sm:grid-cols-2 gap-4">
-                {[
-                  { key: 'name', placeholder: 'Your Name', type: 'text' },
-                  { key: 'email', placeholder: 'Your Email', type: 'email' },
-                ].map(({ key, placeholder, type }) => (
-                  <div key={key}>
-                    <input
-                      type={type}
-                      placeholder={placeholder}
-                      required
-                      value={form[key]}
-                      onChange={(e) => setForm({ ...form, [key]: e.target.value })}
-                      className="w-full px-5 py-4 rounded-xl text-slate-200 placeholder-slate-600 text-sm outline-none transition-all focus:border-violet-500"
-                      style={{
-                        background: 'rgba(255,255,255,0.03)',
-                        border: '1px solid rgba(255,255,255,0.08)',
-                      }}
-                    />
-                  </div>
-                ))}
+                <Field icon={FaUser} label="Full Name">
+                  <input
+                    type="text"
+                    placeholder="John Doe"
+                    required
+                    value={form.name}
+                    onChange={set('name')}
+                    className="w-full px-4 py-3.5 rounded-xl text-slate-200 placeholder-slate-600 text-sm outline-none transition-all focus:ring-2 focus:ring-violet-500/40"
+                    style={inputBase}
+                  />
+                </Field>
+                <Field icon={FaEnvelope} label="Email Address">
+                  <input
+                    type="email"
+                    placeholder="john@example.com"
+                    required
+                    value={form.email}
+                    onChange={set('email')}
+                    className="w-full px-4 py-3.5 rounded-xl text-slate-200 placeholder-slate-600 text-sm outline-none transition-all focus:ring-2 focus:ring-violet-500/40"
+                    style={inputBase}
+                  />
+                </Field>
               </div>
 
-              <input
-                type="text"
-                placeholder="Subject"
-                value={form.subject}
-                onChange={(e) => setForm({ ...form, subject: e.target.value })}
-                className="w-full px-5 py-4 rounded-xl text-slate-200 placeholder-slate-600 text-sm outline-none transition-all focus:border-violet-500"
-                style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.08)' }}
-              />
+              <Field icon={FaTag} label="Subject">
+                <input
+                  type="text"
+                  placeholder="Project collaboration, Freelance work..."
+                  value={form.subject}
+                  onChange={set('subject')}
+                  className="w-full px-4 py-3.5 rounded-xl text-slate-200 placeholder-slate-600 text-sm outline-none transition-all focus:ring-2 focus:ring-violet-500/40"
+                  style={inputBase}
+                />
+              </Field>
 
-              <textarea
-                rows={5}
-                placeholder="Your message..."
-                required
-                value={form.message}
-                onChange={(e) => setForm({ ...form, message: e.target.value })}
-                className="w-full px-4 py-3 rounded-xl text-slate-200 placeholder-slate-600 text-sm outline-none resize-none transition-all focus:border-violet-500"
-                style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.08)' }}
-              />
+              <Field icon={FaCommentDots} label="Message">
+                <textarea
+                  rows={5}
+                  placeholder="Tell me about your project, goals, timeline..."
+                  required
+                  value={form.message}
+                  onChange={set('message')}
+                  className="w-full px-4 py-3.5 rounded-xl text-slate-200 placeholder-slate-600 text-sm outline-none resize-none transition-all focus:ring-2 focus:ring-violet-500/40"
+                  style={inputBase}
+                />
+              </Field>
 
               {error && (
-                <p className="text-red-400 text-xs text-center">{error}</p>
+                <div className="flex items-start gap-2 p-3 rounded-xl" style={{ background: 'rgba(239,68,68,0.08)', border: '1px solid rgba(239,68,68,0.2)' }}>
+                  <span className="text-red-400 text-xs leading-relaxed">{error}</span>
+                </div>
               )}
+
               <motion.button
                 type="submit"
                 disabled={sending}
                 whileHover={{ scale: sending ? 1 : 1.02 }}
                 whileTap={{ scale: sending ? 1 : 0.97 }}
-                className="btn-primary w-full flex items-center justify-center gap-2 disabled:opacity-60 disabled:cursor-not-allowed"
+                className="btn-primary w-full flex items-center justify-center gap-2.5 py-4 text-sm font-semibold disabled:opacity-50 disabled:cursor-not-allowed"
               >
-                {sent ? <>Message Sent! ✓</> : sending ? <>Sending...</> : <><FaPaperPlane size={14} />Send Message</>}
+                {sent ? (
+                  <><span className="text-lg">✓</span> Message Sent Successfully!</>
+                ) : sending ? (
+                  <><span className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin" /> Sending...</>
+                ) : (
+                  <><FaPaperPlane size={13} /> Send Message</>
+                )}
               </motion.button>
             </form>
           </motion.div>
