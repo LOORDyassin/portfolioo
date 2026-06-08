@@ -118,7 +118,7 @@ export default function Hero() {
               <img
                 src={personal.photo1}
                 alt={personal.name}
-                className="w-full h-[530px] sm:h-[590px] lg:h-[660px] object-cover object-top rounded-3xl relative z-10"
+                className="w-full h-auto block rounded-3xl relative z-10"
                 style={{ border: '2px solid rgba(124, 58, 237, 0.4)', boxShadow: '0 0 40px rgba(124,58,237,0.25)' }}
               />
 
