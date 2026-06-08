@@ -114,11 +114,11 @@ export default function Hero() {
             className="relative flex flex-col items-center px-0 sm:px-6 lg:px-10"
           >
             {/* Photo frame — badges are siblings of the photo, never inside overflow-hidden */}
-            <div className="relative w-full max-w-xs sm:w-80 lg:w-96">
+            <div className="relative w-[310px] sm:w-[310px] lg:w-[374px]">
               <img
                 src={personal.photo1}
                 alt={personal.name}
-                className="w-full h-auto block rounded-3xl relative z-10"
+                className="w-full h-[433px] sm:h-[433px] lg:h-[519px] object-cover object-top block rounded-3xl relative z-10"
                 style={{ border: '2px solid rgba(124, 58, 237, 0.4)', boxShadow: '0 0 40px rgba(124,58,237,0.25)' }}
               />
 
