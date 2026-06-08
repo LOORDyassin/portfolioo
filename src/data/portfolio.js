@@ -109,7 +109,7 @@ export const portfolioData = {
       title: "Social Media Ad Campaign",
       description: "A series of high-impact advertisement creatives designed for Instagram, Facebook, TikTok, and X — crafted in Photoshop and Illustrator for maximum engagement, brand awareness, and conversion.",
       tags: ["Photoshop", "Illustrator", "Instagram", "Facebook"],
-      image: `${import.meta.env.BASE_URL}free-palestine.svg`,
+      image: "https://i.postimg.cc/P5pCcBnf/final.png",
       link: "https://github.com/LOORDyassin",
       live: "#",
       featured: false,
