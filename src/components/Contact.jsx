@@ -1,6 +1,7 @@
 import { useRef, useState } from 'react';
 import { motion, useInView } from 'framer-motion';
 import { FaEnvelope, FaMapMarkerAlt, FaGithub, FaLinkedin, FaInstagram, FaFacebook, FaPaperPlane } from 'react-icons/fa';
+import emailjs from '@emailjs/browser';
 import { portfolioData } from '../data/portfolio';
 
 const iconMap = { FaGithub, FaLinkedin, FaInstagram, FaFacebook };
@@ -11,13 +12,34 @@ export default function Contact() {
   const inView = useInView(ref, { once: true, margin: '-80px' });
   const [form, setForm] = useState({ name: '', email: '', subject: '', message: '' });
   const [sent, setSent] = useState(false);
+  const [sending, setSending] = useState(false);
+  const [error, setError] = useState('');
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    const mailto = `mailto:${personal.email}?subject=${encodeURIComponent(form.subject || 'Portfolio Contact')}&body=${encodeURIComponent(`Name: ${form.name}\nEmail: ${form.email}\n\n${form.message}`)}`;
-    window.location.href = mailto;
-    setSent(true);
-    setTimeout(() => setSent(false), 3000);
+    setSending(true);
+    setError('');
+    try {
+      await emailjs.send(
+        import.meta.env.VITE_EMAILJS_SERVICE_ID,
+        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+        {
+          from_name: form.name,
+          from_email: form.email,
+          subject: form.subject || 'Portfolio Contact',
+          message: form.message,
+          to_email: personal.email,
+        },
+        import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+      );
+      setSent(true);
+      setForm({ name: '', email: '', subject: '', message: '' });
+      setTimeout(() => setSent(false), 4000);
+    } catch {
+      setError('Failed to send. Please email me directly at ' + personal.email);
+    } finally {
+      setSending(false);
+    }
   };
 
   return (
@@ -162,20 +184,17 @@ export default function Contact() {
                 style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.08)' }}
               />
 
+              {error && (
+                <p className="text-red-400 text-xs text-center">{error}</p>
+              )}
               <motion.button
                 type="submit"
-                whileHover={{ scale: 1.02 }}
-                whileTap={{ scale: 0.97 }}
-                className="btn-primary w-full flex items-center justify-center gap-2"
+                disabled={sending}
+                whileHover={{ scale: sending ? 1 : 1.02 }}
+                whileTap={{ scale: sending ? 1 : 0.97 }}
+                className="btn-primary w-full flex items-center justify-center gap-2 disabled:opacity-60 disabled:cursor-not-allowed"
               >
-                {sent ? (
-                  <>Message Sent! ✓</>
-                ) : (
-                  <>
-                    <FaPaperPlane size={14} />
-                    Send Message
-                  </>
-                )}
+                {sent ? <>Message Sent! ✓</> : sending ? <>Sending...</> : <><FaPaperPlane size={14} />Send Message</>}
               </motion.button>
             </form>
           </motion.div>
