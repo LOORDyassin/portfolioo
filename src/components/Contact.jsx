@@ -34,8 +34,10 @@ export default function Contact() {
       setSent(true);
       setForm({ name: '', email: '', subject: '', message: '' });
       setTimeout(() => setSent(false), 4000);
-    } catch {
-      setError('Failed to send. Please email me directly at ' + personal.email);
+    } catch (err) {
+      console.error('EmailJS error:', err);
+      const msg = err?.text || err?.message || JSON.stringify(err);
+      setError('Error: ' + msg);
     } finally {
       setSending(false);
     }
