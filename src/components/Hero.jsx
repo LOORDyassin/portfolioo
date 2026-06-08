@@ -89,29 +89,6 @@ export default function Hero() {
               {social.map((s) => {
                 const Icon = iconMap[s.icon];
 
-                if (s.name === 'GitHub') {
-                  return (
-                    <motion.a
-                      key={s.name}
-                      href={`${import.meta.env.BASE_URL}free-palestine.svg`}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      whileHover={{ scale: 1.15, y: -3 }}
-                      whileTap={{ scale: 0.9 }}
-                      title="Free Palestine 🇵🇸"
-                      className="w-10 h-10 rounded-full overflow-hidden flex-shrink-0"
-                      style={{ border: '2px solid rgba(200,16,46,0.6)', boxShadow: '0 0 10px rgba(200,16,46,0.3)' }}
-                    >
-                      <img
-                        src={`${import.meta.env.BASE_URL}free-palestine.svg`}
-                        alt="Free Palestine"
-                        className="w-full h-full object-cover"
-                        style={{ objectPosition: '60% 50%' }}
-                      />
-                    </motion.a>
-                  );
-                }
-
                 return (
                   <motion.a
                     key={s.name}
