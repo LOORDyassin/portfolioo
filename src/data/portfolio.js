@@ -131,7 +131,7 @@
       id: 7,
       title: "Stage Contabiliter",
       description: "A web-based accounting management system developed during my internship at Softtodo — built to streamline bookkeeping operations, track financial entries, manage invoices, and generate accounting reports for small businesses.",
-      tags: ["Internship", "PHP", "JavaScript", "Accounting", "Softtodo"],
+      tags: ["TypeScript", "PHP", "Laravel", "Blade", "CSS"],
       image: "https://i.postimg.cc/zDsrbh13/stage-contabiliter.png",
       link: "https://github.com/LOORDyassin/stage-contabiliter",
       live: "#",
