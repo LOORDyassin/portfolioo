@@ -73,14 +73,18 @@ export default function Projects() {
             transition={{ duration: 0.4 }}
             className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5 lg:gap-6"
           >
-            {filtered.map((project, i) => (
+            {filtered.map((project, i) => {
+              const isLastAlone = i === filtered.length - 1;
+              const loneInLg = filtered.length % 3 === 1;
+              const loneInSm = filtered.length % 2 === 1;
+              return (
               <motion.div
                 key={project.id}
                 initial={{ opacity: 0, scale: 0.95 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ delay: i * 0.1 }}
                 whileHover={{ y: -6 }}
-                className="glass-card rounded-3xl overflow-hidden group"
+                className={`glass-card rounded-3xl overflow-hidden group${isLastAlone && loneInLg ? ' lg:col-start-2' : ''}${isLastAlone && loneInSm ? ' sm:col-start-2' : ''}`}
               >
                 {/* Project image / placeholder */}
                 <div className={`h-40 sm:h-44 lg:h-48 bg-gradient-to-br ${project.gradient} relative overflow-hidden`}>
@@ -152,7 +156,8 @@ export default function Projects() {
                   </div>
                 </div>
               </motion.div>
-            ))}
+              );
+            })}
           </motion.div>
         </AnimatePresence>
 
