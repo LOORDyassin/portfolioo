@@ -128,6 +128,17 @@
       gradient: "from-blue-700 to-cyan-600",
     },
     {
+      id: 7,
+      title: "Stage Contabiliter",
+      description: "A web-based accounting management system developed during my internship at Softtodo — built to streamline bookkeeping operations, track financial entries, manage invoices, and generate accounting reports for small businesses.",
+      tags: ["Internship", "PHP", "JavaScript", "Accounting", "Softtodo"],
+      image: `${import.meta.env.BASE_URL}coming-soon-banner.svg`,
+      link: "https://github.com/LOORDyassin/stage-contabiliter",
+      live: "#",
+      featured: true,
+      gradient: "from-emerald-600 to-teal-700",
+    },
+    {
       id: 5,
       title: "Something Big Is Coming",
       description: "A new project is quietly taking shape — crafted with precision, built with purpose. I'm pushing the limits of what I can design and develop. Stay tuned, the wait will be worth it.",
@@ -147,6 +158,15 @@
       degree: "Computer Science & Big Data",
       year: "2025 – Present",
       description: "Bridging code and creativity — studying CS & Big Data at ISIMS Sfax while mastering web dev, mobile apps, AI, UI/UX design, and digital media to craft complete digital experiences.",
+    },
+  ],
+
+  experience: [
+    {
+      company: "Softtodo",
+      role: "Software Development Intern",
+      period: "June 2026 · 1 month",
+      description: "During my one-month internship at Softtodo, a software company specializing in business management solutions, I worked on building a web-based accounting system called Stage Contabiliter. The project involved designing and developing core bookkeeping features — including financial entry tracking, invoice management, and automated report generation — giving me hands-on experience with real-world software development workflows, client-oriented requirements, and the full cycle of building a production-grade business tool from the ground up.",
     },
   ],
 };

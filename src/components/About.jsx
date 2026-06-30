@@ -1,7 +1,7 @@
 import { motion, AnimatePresence } from 'framer-motion';
 import { useInView } from 'framer-motion';
 import { useRef, useState, useEffect } from 'react';
-import { FaMapMarkerAlt, FaEnvelope, FaGraduationCap, FaSwimmer, FaGamepad, FaHeart, FaDownload, FaShareAlt, FaCheck } from 'react-icons/fa';
+import { FaMapMarkerAlt, FaEnvelope, FaGraduationCap, FaBriefcase, FaSwimmer, FaGamepad, FaHeart, FaDownload, FaShareAlt, FaCheck } from 'react-icons/fa';
 import { portfolioData } from '../data/portfolio';
 
 const NS       = 'loordyassin-portfolio';
@@ -35,7 +35,7 @@ async function decrement() {
 
 
 export default function About() {
-  const { personal, education } = portfolioData;
+  const { personal, education, experience } = portfolioData;
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: '-100px' });
 
@@ -253,6 +253,22 @@ export default function About() {
                     <p className="text-white font-semibold">{edu.school}</p>
                     <p className="text-violet-400 text-sm">{edu.degree} · {edu.year}</p>
                     <p className="text-slate-400 text-sm mt-2 leading-relaxed">{edu.description}</p>
+                  </div>
+                </div>
+              </div>
+            ))}
+
+            {/* Experience */}
+            {experience.map((exp, i) => (
+              <div key={i} className="glass-card rounded-2xl p-5 sm:p-8 mt-4">
+                <div className="flex items-start gap-4">
+                  <div className="w-10 h-10 rounded-xl bg-emerald-500/10 flex items-center justify-center flex-shrink-0">
+                    <FaBriefcase className="text-emerald-400" size={16} />
+                  </div>
+                  <div>
+                    <p className="text-white font-semibold">{exp.role}</p>
+                    <p className="text-emerald-400 text-sm">{exp.company} · {exp.period}</p>
+                    <p className="text-slate-400 text-sm mt-2 leading-relaxed">{exp.description}</p>
                   </div>
                 </div>
               </div>
